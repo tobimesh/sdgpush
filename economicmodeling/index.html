@@ -1,0 +1,2226 @@
+<style>
+    @media (max-width: 768px) {
+        .country-header .header .grid-container.fluid {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+        .country-header .header .grid-x {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .country-header .header .cell.top-left {
+            width: 100% !important;
+            max-width: 100% !important;
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            padding: 10px 0 10px 10px !important;
+            margin: 0 !important;
+            gap: 12px !important;
+        }
+        .country-header .logo {
+            margin-bottom: 0 !important;
+            margin-right: 10px !important;
+            width: 48px !important;
+            height: 48px !important;
+            display: inline-block !important;
+        }
+        .country-header .logo img {
+            max-width: 48px !important;
+            max-height: 48px !important;
+            width: 48px !important;
+            height: 48px !important;
+        }
+        .country-header .site-title {
+            display: inline-block !important;
+            font-size: 1.1rem !important;
+            font-weight: 600 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 1.2 !important;
+        }
+        .country-header .site-title span a {
+            font-size: 1.1rem !important;
+            font-weight: 600 !important;
+            color: #111 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            text-decoration: none !important;
+        }
+        .country-header {
+            position: relative !important;
+            z-index: 10 !important;
+            background: #fff !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+        }
+    }
+    @media (max-width: 768px) {
+        .hero-img-section {
+            min-height: 0 !important;
+            height: auto !important;
+            max-height: none !important;
+            position: relative;
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+            border-bottom: none !important;
+        }
+        .hero-img-section img.hero-img {
+            width: 100vw !important;
+            height: 48vw !important;
+            min-height: 220px !important;
+            max-height: 340px !important;
+            object-fit: cover !important;
+            object-position: center !important;
+            display: block;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+            z-index: 1;
+        }
+        .hero-overlay-content {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100vw !important;
+            height: 100% !important;
+            padding: 12px 5vw 0 4vw !important;
+            background: linear-gradient(90deg, rgba(0,0,0,0.08) 30%, rgba(0,0,0,0.00) 100%) !important;
+            box-sizing: border-box !important;
+            z-index: 2;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: flex-start !important;
+        }
+        .hero-overlay-content h1, .hero-overlay-content .overline {
+            color: #fff !important;
+            text-shadow: 0 3px 16px rgba(0,0,0,0.55) !important;
+        }
+    }
+    /* Aggressively remove underline and box-shadow from GTAP link and its children, including pseudo-elements */
+    .gtap-link, .gtap-link *, .gtap-link:visited, .gtap-link:active, .gtap-link:focus,
+    .gtap-link::after, .gtap-link::before, .gtap-link *::after, .gtap-link *::before {
+        text-decoration: none !important;
+        border-bottom: 0 !important;
+        box-shadow: none !important;
+        outline: none !important;
+        background: none !important;
+        color: inherit !important;
+    }
+</style>
+
+<style>
+/* GLOBAL RESPONSIVE STYLES */
+@media (max-width: 900px) {
+    body {
+        font-size: 15px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 90%;
+    }
+    .grid-container, .grid-x {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
+
+@media (max-width: 768px) {
+            .hero-img-section,
+            .hero-img-section + section,
+            .hero-img-section + section > .grid-container,
+            .hero-img-section + section > .grid-container > .grid-x {
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+                border: none !important;
+            }
+            .hero-img-section {
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+                border-bottom: none !important;
+            }
+            .hero-img-section + section {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+                border-top: none !important;
+            }
+        .hero-img-section {
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+            border-bottom: none !important;
+        }
+        .hero-img-section + section {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+            border-top: none !important;
+        }
+    body {
+        font-size: 14px;
+    }
+    .hero-img-section {
+        min-height: 220px;
+    }
+    .hero-img {
+        height: auto !important;
+        max-width: 100vw !important;
+    }
+    .hero-overlay-content {
+        padding-left: 4vw !important;
+    }
+    .hero-overlay-content h1 {
+        font-size: 1.9rem !important;
+        line-height: 1.1 !important;
+        margin-bottom: 1rem !important;
+    }
+    .hero-overlay-content .overline {
+        font-size: 0.95rem !important;
+    }
+    section, .cge-diagram-wrapper, .household-diagram-wrapper {
+        padding: 30px 5px !important;
+    }
+    .info-panel, .household-info-panel {
+        padding: 18px !important;
+        min-height: 100px !important;
+    }
+    .info-panel h3, .household-info-panel h3 {
+        font-size: 1.1rem !important;
+    }
+    .info-panel p, .household-info-panel p {
+        font-size: 0.95rem !important;
+    }
+    .stat-card, .detail-card {
+        padding: 18px !important;
+        min-height: unset !important;
+        margin-bottom: 18px !important;
+    }
+    .stat-card h3 {
+        font-size: 2.2rem !important;
+        -webkit-text-stroke: 1px #000 !important;
+        text-stroke: 1px #000 !important;
+    }
+    .grid-x {
+        flex-direction: column !important;
+    }
+    .cell {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .footer .grid-x {
+        flex-direction: column !important;
+        padding: 0 !important;
+    }
+    .footer .cell {
+        margin-bottom: 18px !important;
+    }
+    .footer-logo img {
+        max-width: 120px !important;
+    }
+    .footer-lists, .footer-icons {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+    }
+    .footer-lists li, .footer-icons li {
+        margin-bottom: 0 !important;
+    }
+    .stands-apart-section .gtap-logo-cell {
+        text-align: center !important;
+        margin-top: 10px !important;
+    }
+    .stands-apart-section .gtap-logo-cell a {
+        display: inline-flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+    }
+    .stands-apart-section .gtap-logo-img {
+        width: 56vw !important;
+        max-width: 180px !important;
+        min-width: 130px !important;
+        height: auto !important;
+    }
+    .stands-apart-section .stands-apart-subtitle {
+        margin-bottom: 18px !important;
+    }
+    #featured-scroll-area {
+        gap: 18px !important;
+        padding-bottom: 8px !important;
+    }
+    #featured-scroll-area > div {
+        min-width: 90vw !important;
+        max-width: 95vw !important;
+        flex: 0 0 95vw !important;
+        height: auto !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+    }
+    #featured-scroll-area > div > div:first-child {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+    }
+    #featured-scroll-area > div > div:last-child {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding-left: 0 !important;
+        padding-top: 14px !important;
+        justify-content: flex-start !important;
+        gap: 10px !important;
+    }
+    #featured-scroll-area > div > div:last-child > div {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    #featured-scroll-area > div > div:last-child a {
+        margin-top: 0 !important;
+    }
+    #featured-scroll-area img {
+        height: auto !important;
+        width: 100% !important;
+        object-fit: contain !important;
+        aspect-ratio: 16 / 9 !important;
+    }
+    #featured-scroll-area h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 10px !important;
+    }
+    #featured-scroll-area p {
+        font-size: 0.95rem !important;
+    }
+    #featured-progress-bar {
+        height: 8px !important;
+        margin-top: 6px !important;
+        margin-bottom: 4px !important;
+    }
+    #progress-bar-bg {
+        display: block !important;
+    }
+    #progress-bar-handle {
+        height: 2px !important;
+        box-shadow: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+    .hero-overlay-content h1 {
+        font-size: 1.3rem !important;
+    }
+    .hero-overlay-content .overline {
+        font-size: 0.9rem !important;
+    }
+    .footer-logo img {
+        max-width: 80px !important;
+    }
+    #featured-scroll-area img {
+        height: auto !important;
+        object-fit: contain !important;
+    }
+}
+</style>
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SDG Push | UNDP</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <meta name="description" content="Driving the future of development.">
+    <meta name="keywords" content="UNDP, UN, SDG Insights, SDG Push">
+    <link rel="canonical" href="https://sdgpush.undp.org/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SDG Push | UNDP">
+    <meta property="og:site_name" content="UNDP">
+    <meta property="og:url" content="https://sdgpush.undp.org/">
+    <meta property="og:description" content="Driving the future of development.">
+    <meta property="og:image" content="https://sdgpush.undp.org/assets/img/social-thumbnail.jpg">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1080">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@undp">
+    <link rel="stylesheet" href="https://use.typekit.net/ukl2sym.css">
+    <link rel="stylesheet" href="../assets/css/app.css?202109231710">
+
+    <link rel="stylesheet" href="../assets/css/content-card.min.css">
+    <link rel="stylesheet" href="../assets/css/stats-cards.min.css">
+    <link rel="stylesheet" href="../assets/css/buttons.min.css">
+    <link rel="stylesheet" href="../assets/css/cta-link.min.css">
+    <link rel="stylesheet" href="../assets/css/breadcrumbs.css">
+    <link rel="stylesheet" href="../assets/css/modal.min.css">
+    <link rel="stylesheet" href="../assets/css/tab.min.css" />
+    <link rel="stylesheet" href="../tab.min.css" />
+    <link rel="stylesheet" href="../tabs-partnerships.css" />
+
+
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-card-slider.min.css" />
+    <!--    <link rel="stylesheet" href="base-minimal.min.css" />-->
+    <link rel="stylesheet" href="../assets/css/stats-cards.min.css" />
+    <!-- Swiper CSS/JS removed -->
+    <link rel="stylesheet" href="../assets/css/custom-select.min.css">
+    <link rel="stylesheet" href="../assets/css/footer.min.css">
+
+    <link rel="stylesheet" href="../assets/css/bio-card.min.css">
+    <script src="../assets/js/lottie-player.js"></script>
+    <link rel="stylesheet" href="../assets/css/modal.min.css">
+
+    <!-- 2023 -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">
+    <link rel="stylesheet" href="../assets/css/country-site-header.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu-overflow.min.css">
+    <link rel="stylesheet" href="../assets/css/tiles.css">
+
+    <link rel="stylesheet" href="../assets/css/reports-2024.css">
+
+    <!-- CGE Model Interactive Visualization Styles -->
+    <style>
+        @font-face {
+            font-family: 'Proxima Nova';
+            src: url('../assets/fonts/ProximaNova_Reg.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Proxima Nova';
+            src: url('../assets/fonts/ProximaNova_Bold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+        }
+        /* Main CGE Diagram Container */
+        .cge-diagram-wrapper {
+            position: relative;
+            max-width: 1360px;
+            margin: 0 auto;
+            background: white;
+            padding: 42px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .cge-interactive-container {
+            position: relative;
+            width: 100%;
+            max-width: 1220px;
+            margin: 0 auto;
+        }
+
+        /* Base Image */
+        .cge-base-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Clipped Overlay segments - One for each quadrant */
+        .cge-interactive-container > .cge-segment {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.4s ease, transform 0.3s ease, filter 0.4s ease;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .segment-overlay-svg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            overflow: visible;
+        }
+
+        .segment-overlay-svg .cge-segment {
+            fill: none;
+            stroke-width: 174;
+            stroke-linecap: butt;
+            stroke-dasharray: none;
+            stroke-dashoffset: 0;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease-out;
+        }
+
+        .segment-overlay-svg .cge-hit-segment {
+            fill: none;
+            stroke: transparent;
+            stroke-width: 170;
+            cursor: pointer;
+            pointer-events: stroke;
+        }
+
+        .segment-overlay-svg .cge-hit-segment:hover + .cge-segment {
+            opacity: 0.36;
+        }
+
+        .segment-arc-top-left {
+            stroke: #0468B1;
+        }
+
+        .segment-arc-top-right {
+            stroke: #FFEB00;
+        }
+
+        .segment-arc-bottom-left {
+            stroke: #EE402D;
+        }
+
+        .segment-arc-bottom-right {
+            stroke: #6DE354;
+        }
+
+        /* Clip paths for each segment */
+        .segment-top-left {
+            clip-path: polygon(
+                2% 8%, 8% 8%, 15% 8%, 22% 8%, 28% 8%,
+                30% 10%, 32% 12%, 34% 15%, 36% 18%, 37% 22%,
+                38% 26%, 39% 30%, 40% 34%, 40% 37%, 39% 40%, 38% 43%,
+                37% 46%, 35% 49%, 33% 52%, 31% 55%, 29% 58%, 27% 60%,
+                25% 62%, 20% 64%, 15% 64%, 10% 60%, 5% 55%,
+                2% 50%, 2% 40%, 2% 30%, 2% 20%, 2% 8%
+            );
+        }
+
+        .segment-top-left:hover {
+            opacity: 0;
+        }
+
+        .segment-top-right {
+            clip-path: polygon(
+                72% 8%, 60% 8%, 58% 10%, 56% 12%, 55% 15%, 54% 18%, 53% 22%,
+                54% 26%, 55% 30%, 57% 34%, 59% 37%, 61% 40%, 63% 43%, 64% 46%,
+                65% 49%, 66% 52%, 66% 55%, 65% 58%, 64% 60%, 62% 62%, 60% 64%,
+                70% 64%, 70% 54%, 70% 44%, 70% 34%, 70% 24%, 70% 14%, 72% 8%
+            );
+        }
+
+        .segment-top-right:hover {
+            opacity: 0;
+        }
+
+        .segment-bottom-left {
+            clip-path: polygon(
+                2% 50%, 2% 60%, 2% 70%, 2% 80%, 2% 90%, 2% 92%,
+                8% 92%, 15% 92%, 22% 92%, 28% 92%,
+                30% 90%, 32% 88%, 34% 85%, 36% 82%, 37% 78%,
+                38% 74%, 39% 70%, 40% 66%, 40% 63%, 39% 60%,
+                38% 57%, 37% 54%, 35% 51%, 33% 48%, 31% 45%,
+                29% 42%, 27% 40%, 25% 38%, 20% 36%, 15% 36%,
+                10% 40%, 5% 45%, 2% 50%
+            );
+        }
+
+        .segment-bottom-left:hover {
+            opacity: 0;
+        }
+
+        .segment-bottom-right {
+            clip-path: polygon(
+                61% 60%, 63% 57%, 64% 54%, 65% 51%, 66% 48%, 65% 45%,
+                64% 42%, 62% 39%, 60% 37%, 59% 36%,
+                70% 36%, 70% 46%, 70% 56%, 70% 66%, 70% 76%, 70% 86%,
+                70% 92%, 64% 92%, 58% 92%, 52% 92%, 46% 92%, 40% 92%, 34% 92%,
+                36% 90%, 38% 88%, 40% 85%, 42% 82%, 44% 78%,
+                46% 74%, 48% 70%, 50% 66%, 52% 63%, 54% 60%, 57% 60%, 61% 60%
+            );
+        }
+
+        .segment-bottom-right:hover {
+            opacity: 0;
+        }
+
+        /* Center Circle - No interaction */
+        .center-circle-block {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 36%;
+            height: 48%;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10;
+            cursor: default;
+        }
+
+        /* Right Info Box - No interaction */
+        .right-info-block {
+            position: absolute;
+            top: 10%;
+            right: 0;
+            width: 28%;
+            height: 80%;
+            pointer-events: none;
+            z-index: 10;
+            cursor: default;
+        }
+
+        /* Info Panel */
+        .info-panel {
+            margin-top: 30px;
+            padding: 32px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            min-height: 170px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            font-family: 'Proxima Nova', Arial, sans-serif;
+        }
+
+        .info-panel h3 {
+            color: #0a1c34;
+            margin-bottom: 14px;
+            font-size: 2rem;
+            font-weight: 600;
+            font-family: 'Proxima Nova', Arial, sans-serif;
+        }
+
+        .info-panel .info-layout {
+            display: flex;
+            align-items: flex-start;
+            gap: 22px;
+        }
+
+        .info-panel .info-text-column {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .info-panel .info-text-column h3 {
+            margin-bottom: 6px;
+        }
+
+        .info-panel .info-subtitle {
+            color: #0a1c34;
+            font-size: 1.24rem;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1.35;
+            font-family: 'Proxima Nova', Arial, sans-serif;
+        }
+
+        .info-panel .info-subhead {
+            margin: 0 0 12px;
+        }
+
+        .info-panel .info-icon-badge {
+            width: 74px;
+            height: 74px;
+            border-radius: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 74px;
+            margin-top: 1px;
+            background: transparent;
+        }
+
+        .info-panel .info-icon-badge svg {
+            width: 44px;
+            height: 44px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .info-panel .info-icon-badge img {
+            width: 112px;
+            height: 112px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .info-panel .info-icon-mask {
+            width: calc(112px * var(--icon-scale, 1));
+            height: calc(112px * var(--icon-scale, 1));
+            background-color: var(--icon-color, currentColor);
+            -webkit-mask: var(--icon-url) center / contain no-repeat;
+            mask: var(--icon-url) center / contain no-repeat;
+            display: block;
+        }
+
+        .info-panel p {
+            color: #555;
+            line-height: 1.55;
+            font-size: 1.18rem;
+            font-family: 'Proxima Nova', Arial, sans-serif;
+        }
+
+        .info-panel ul {
+            margin: 0;
+            padding-left: 24px;
+            color: #555;
+            line-height: 1.55;
+            font-size: 1.14rem;
+            font-family: 'Proxima Nova', Arial, sans-serif;
+        }
+
+        .info-panel li {
+            margin-bottom: 6px;
+            font-family: 'Proxima Nova', Arial, sans-serif;
+        }
+
+        .info-default {
+            text-align: center;
+            color: #999;
+            font-style: italic;
+        }
+
+        /* Colored boxes for each segment */
+        .info-macro {
+            background: rgba(4, 104, 177, 0.12);
+            border-left: 5px solid #0468B1;
+            box-shadow: 0 4px 20px rgba(4, 104, 177, 0.2);
+        }
+
+        .info-macro h3 {
+            color: #0468B1;
+        }
+
+        .info-macro .info-icon-badge {
+            color: #0468B1;
+            background: transparent;
+            width: 74px;
+            height: 74px;
+            flex: 0 0 74px;
+        }
+
+        .info-macro .info-icon-badge img {
+            width: 54px !important;
+            height: 54px !important;
+            filter: none;
+        }
+
+        .info-jobs {
+            background: rgba(255, 235, 0, 0.16);
+            border-left: 5px solid #FFEB00;
+            box-shadow: 0 4px 20px rgba(255, 235, 0, 0.25);
+        }
+
+        .info-jobs h3 {
+            color: #B89F00;
+        }
+
+        .info-jobs .info-icon-badge {
+            color: #B89F00;
+            background: transparent;
+        }
+
+        .info-climate {
+            background: rgba(238, 64, 45, 0.12);
+            border-left: 5px solid #EE402D;
+            box-shadow: 0 4px 20px rgba(238, 64, 45, 0.2);
+        }
+
+        .info-climate h3 {
+            color: #D33220;
+        }
+
+        .info-climate .info-icon-badge {
+            color: #D33220;
+            background: transparent;
+        }
+
+        .info-climate .info-icon-badge img {
+            filter: brightness(0) saturate(100%) invert(39%) sepia(86%) saturate(2242%) hue-rotate(340deg) brightness(96%) contrast(95%);
+        }
+
+        .info-household {
+            background: rgba(109, 227, 84, 0.12);
+            border-left: 5px solid #6DE354;
+            box-shadow: 0 4px 20px rgba(109, 227, 84, 0.2);
+        }
+
+        .info-household h3 {
+            color: #4DA63D;
+        }
+
+        .info-household .info-icon-badge {
+            color: #4DA63D;
+            background: transparent;
+        }
+
+        /* Alternative Effect - Colored Overlays */
+        .segment-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            cursor: pointer;
+            z-index: 3;
+            mix-blend-mode: multiply;
+        }
+
+        .overlay-top-left {
+            background: radial-gradient(circle at 25% 25%, rgba(33, 150, 243, 0.6) 0%, transparent 50%);
+            clip-path: polygon(
+                2% 8%, 28% 8%, 30% 12%, 32% 18%, 33% 25%, 34% 32%, 34% 38%,
+                32% 42%, 30% 45%, 28% 47%, 25% 48%, 22% 47%, 20% 45%, 18% 42%,
+                17% 38%, 16% 32%, 16% 25%, 17% 18%, 19% 12%, 22% 8%, 8% 8%,
+                2% 15%, 2% 35%, 10% 50%, 15% 50%, 2% 50%, 2% 8%
+            );
+        }
+
+        .overlay-top-left:hover {
+            opacity: 1;
+        }
+
+        .overlay-top-right {
+            background: radial-gradient(circle at 75% 25%, rgba(255, 152, 0, 0.6) 0%, transparent 50%);
+            clip-path: polygon(
+                35% 8%, 60% 8%, 60% 10%, 62% 14%, 64% 20%, 65% 27%, 66% 34%,
+                66% 40%, 64% 45%, 62% 48%, 59% 50%, 56% 51%, 53% 50%, 51% 48%,
+                49% 45%, 48% 40%, 47% 34%, 47% 27%, 48% 20%, 50% 14%, 52% 10%,
+                54% 8%, 35% 8%, 35% 15%, 40% 25%, 45% 35%, 48% 42%, 35% 50%,
+                66% 50%, 70% 35%, 70% 8%, 60% 8%
+            );
+        }
+
+        .overlay-top-right:hover {
+            opacity: 1;
+        }
+
+        .overlay-bottom-left {
+            background: radial-gradient(circle at 25% 75%, rgba(156, 39, 176, 0.6) 0%, transparent 50%);
+            clip-path: polygon(
+                2% 55%, 15% 55%, 10% 60%, 17% 65%, 16% 72%, 16% 78%, 17% 84%,
+                19% 88%, 22% 91%, 28% 93%, 34% 93%, 32% 88%, 30% 84%, 28% 80%,
+                27% 75%, 26% 70%, 26% 64%, 28% 60%, 30% 57%, 32% 55%, 34% 53%,
+                34% 62%, 33% 68%, 32% 74%, 30% 80%, 28% 85%, 25% 89%, 22% 92%,
+                2% 92%, 2% 55%
+            );
+        }
+
+        .overlay-bottom-left:hover {
+            opacity: 1;
+        }
+
+        .overlay-bottom-right {
+            background: radial-gradient(circle at 75% 75%, rgba(76, 175, 80, 0.6) 0%, transparent 50%);
+            clip-path: polygon(
+                35% 54%, 49% 54%, 51% 56%, 53% 60%, 54% 64%, 55% 70%, 56% 76%,
+                56% 82%, 54% 87%, 52% 90%, 50% 92%, 47% 93%, 44% 93%, 41% 91%,
+                39% 88%, 37% 84%, 36% 78%, 36% 72%, 37% 66%, 39% 60%, 41% 56%,
+                43% 54%, 35% 54%, 35% 60%, 40% 70%, 42% 80%, 35% 92%, 60% 92%,
+                66% 92%, 70% 92%, 70% 54%, 66% 54%, 35% 54%
+            );
+        }
+
+        .overlay-bottom-right:hover {
+            opacity: 1;
+        }
+
+        /* Labels that appear on hover */
+        .segment-label {
+            position: absolute;
+            background: rgba(10, 28, 52, 0.95);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            white-space: nowrap;
+            z-index: 10;
+        }
+
+        .label-top-left {
+            top: 15%;
+            left: 8%;
+        }
+
+        .label-top-right {
+            top: 15%;
+            left: 38%;
+        }
+
+        .label-bottom-left {
+            bottom: 15%;
+            left: 8%;
+        }
+
+        .label-bottom-right {
+            bottom: 15%;
+            left: 38%;
+        }
+
+        .segment-overlay:hover + .segment-label {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .cge-diagram-wrapper {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .segment-label {
+                font-size: 0.8rem;
+                padding: 10px 15px;
+            }
+        }
+
+        /* Household Analysis Interactive Visualization Styles */
+        .household-diagram-wrapper {
+            position: relative;
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            padding: 80px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .household-interactive-container {
+            position: relative;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .household-base-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .household-segment {
+            position: absolute;
+            opacity: 0.01;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+            z-index: 2;
+            background: transparent;
+        }
+
+        .segment-macro {
+            top: 8%;
+            left: 3%;
+            width: 30%;
+            height: 12%;
+        }
+
+        .segment-meso {
+            top: 30%;
+            left: 3%;
+            width: 28%;
+            height: 12%;
+        }
+
+        .segment-micro {
+            top: 52%;
+            left: 3%;
+            width: 26%;
+            height: 12%;
+        }
+
+        .household-info-panel {
+            margin-top: 60px;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            min-height: 220px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .household-info-panel h3 {
+            color: #0a1c34;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .household-info-panel p {
+            color: #333;
+            line-height: 1.9;
+            font-size: 1.25rem;
+        }
+
+        .household-info-default {
+            color: #0a1c34;
+            font-style: italic;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 1.25rem;
+        }
+
+        .household-info-macro {
+            background: rgba(91, 155, 213, 0.12);
+            border-left: 5px solid #5B9BD5;
+            box-shadow: 0 4px 20px rgba(91, 155, 213, 0.25);
+        }
+
+        .household-info-macro h3 {
+            color: #3B7BAF;
+        }
+
+        .household-info-meso {
+            background: rgba(37, 102, 176, 0.12);
+            border-left: 5px solid #2566B0;
+            box-shadow: 0 4px 20px rgba(37, 102, 176, 0.25);
+        }
+
+        .household-info-meso h3 {
+            color: #1F5CA8;
+        }
+
+        .household-info-micro {
+            background: rgba(13, 40, 65, 0.12);
+            border-left: 5px solid #0D2841;
+            box-shadow: 0 4px 20px rgba(13, 40, 65, 0.25);
+        }
+
+        .household-info-micro h3 {
+            color: #0A2540;
+        }
+
+        @media (max-width: 768px) {
+            .household-diagram-wrapper {
+                padding: 40px 30px;
+            }
+
+            .household-info-panel {
+                padding: 30px;
+                min-height: 170px;
+            }
+
+            .household-info-panel h3 {
+                font-size: 1.6rem;
+            }
+
+            .household-info-panel p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+
+    <style>
+        /* Remove underline and box-shadow from GTAP link and its children */
+        .gtap-link, .gtap-link *, .gtap-link:visited, .gtap-link:active, .gtap-link:focus {
+            text-decoration: none !important;
+            border-bottom: none !important;
+            box-shadow: none !important;
+            outline: none !important;
+        }
+    </style>
+
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NDW6MV6');
+    </script>
+</head>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+
+<body style="margin:0;padding:0;box-sizing:border-box;width:100vw;overflow-x:hidden;background:#fff;">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDW6MV6" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+
+    <header class="country-header" style="z-index: 999;">
+        <section class="header">
+            <div class="grid-container fluid">
+                <div class="grid-x grid-margin-x align-content-middle">
+                    <div class="cell small-8 large-2 shrink align-self-middle top-left">
+                        <a href="../index.html" class="logo" tabindex="0" title="UNDP Logo homepage link">
+                            <img src="../assets/img/undp-logo-blue.svg" alt="UNDP Logo" />
+                        </a>
+                        <div class="site-title">
+
+                            <span><a href="../index.html" title="UNDP homepage link" style="font-weight: 600;">SDG Push
+                                    </a></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+    </header>
+
+
+
+
+
+        <section class="hero-img-section" style="position:relative;margin:0;padding:0;border:none;overflow:hidden;width:100vw;">
+            <img src="../assets/img/Shipping Image.png" alt="Shipping containers" class="hero-img" style="width:100vw;height:auto;display:block;margin:0;padding:0;border:none;">
+            <div class="hero-overlay-content" style="position:absolute;top:0;left:0;width:100vw;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding-left:10vw;z-index:2;">
+                <h1 style="font-family:'SohneBreit', 'Proxima Nova', 'Arial', sans-serif;font-size:6.5rem;line-height:1.02;color:#fff;font-weight:700;margin-bottom:2rem;text-shadow:0 2px 36px rgba(0,0,0,0.32);letter-spacing:-2px;">ECONOMIC<br>MODELING</h1>
+                <div class="overline" style="font-family:'SohneBreit', 'Proxima Nova', 'Arial', sans-serif;font-size:2.1rem;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,0.22);font-weight:300;margin-top:0;letter-spacing:0;">Simulating the effects of major shocks and policies with UNDP's CGE Model</div>
+            </div>
+        </section>
+
+        <style>
+            .hero-img-section {
+                position: relative;
+                margin: 0 !important;
+                padding: 0 !important;
+                border: none !important;
+                overflow: hidden;
+                width: 100vw;
+            }
+            .hero-img {
+                width: 100vw;
+                height: auto;
+                display: block;
+                margin: 0 !important;
+                padding: 0 !important;
+                border: none !important;
+            }
+            .hero-img-section + section,
+            .hero-img-section + section > .grid-container,
+            .hero-img-section + section > .grid-container > .grid-x {
+                margin: 0 !important;
+                padding: 0 !important;
+                border: none !important;
+            }
+        </style>
+
+
+    <!-- CGE Model Description Section -->
+    <section style="background-color: #0a1c34; color: white; padding: 100px 0 80px 0; font-family: 'Proxima Nova', 'Arial', sans-serif;">
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x align-middle">
+                    <div class="cell small-12 medium-12 large-5" style="padding-top: -80px;">
+                    <h2 style="font-size: 2.5rem; line-height: 1.2; margin-bottom: 30px;">Simulating whole-economy shocks and transformation, leaving no one behind</h2>
+                </div>
+                <div class="cell small-12 medium-12 large-7">
+                    <p style="margin-bottom: 20px;"><strong>The UNDP CGE (Computable General Equilibrium) model is an economy-wide analytical tool that represents how different parts of an economy interact and respond to change.</strong> It captures the interdependence between industries, the behavior and interactions of key economic agents, such as producers, workers, consumers, government, and the rest of the world, and how prices influence decisions across markets. By incorporating macroeconomic constraints, the model provides a coherent framework for simulating how policies or external shocks ripple through the economy, affecting growth, employment, incomes, and overall development outcomes.</p>
+                    <p style="margin-bottom: 15px; font-weight: 600;">The model can simulate:</p>
+                    <ul style="list-style-type: disc; padding-left: 20px; line-height: 1.3;">
+                        <li>Poverty impacts</li>
+                        <li>Inequality effects</li>
+                        <li>Distributional consequences of shocks</li>
+                        <li>Fiscal redistribution effects</li>
+                        <li>Labor productivity changes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CGE Model Interactive Visualization -->
+    <section style="background-color: #f5f5f5; padding: 92px 0;">
+        <div class="grid-container">
+            <h2 style="text-align: left; margin-bottom: 20px; font-size: 3rem; color: #0a1c34; font-weight: 700; font-family: 'Proxima Nova', 'Arial', sans-serif; padding-left: 40px;">Questions the CGE model can answer</h2>
+            <p style="text-align: left; color: #000; margin-bottom: 60px; font-size: 1.4rem; font-family: 'Proxima Nova', 'Arial', sans-serif; font-weight: 300; padding-left: 40px;">The UNDP CGE model maps the full distributional path of an economic shock, tracing impacts from the aggregate economy to individual households through five transmission channels.</p>
+            <div class="grid-x">
+                <div class="cell small-12">
+                    
+                    <div class="cge-diagram-wrapper">
+                        <div class="cge-interactive-container">
+                            <!-- Base Image -->
+                            <img src="../assets/img/cgem.svg" alt="CGE Model" class="cge-base-image">
+
+                            <svg class="segment-overlay-svg" viewBox="0 0 3044 1671" preserveAspectRatio="none" aria-hidden="true">
+                                <path class="cge-hit-segment" data-segment="macro" d="M253 814C253 480.972 523.42 211 857 211"></path>
+                                <path class="cge-segment segment-arc-top-left" pathLength="100" d="M253 814C253 480.972 523.42 211 857 211"></path>
+
+                                <path class="cge-hit-segment" data-segment="jobs" d="M857 211C1189.48 211 1459 480.972 1459 814"></path>
+                                <path class="cge-segment segment-arc-top-right" pathLength="100" d="M857 211C1189.48 211 1459 480.972 1459 814"></path>
+
+                                <path class="cge-hit-segment" data-segment="climate" d="M857 1417C523.42 1417 253 1147.03 253 814"></path>
+                                <path class="cge-segment segment-arc-bottom-left" pathLength="100" d="M857 1417C523.42 1417 253 1147.03 253 814"></path>
+
+                                <path class="cge-hit-segment" data-segment="household" d="M1459 814C1459 1147.03 1189.48 1417 857 1417"></path>
+                                <path class="cge-segment segment-arc-bottom-right" pathLength="100" d="M1459 814C1459 1147.03 1189.48 1417 857 1417"></path>
+                            </svg>
+                        </div>
+
+                        <div class="info-panel" id="cgeInfoPanel">
+                            <p class="info-default">Hover over the image to see questions the CGE model can answer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Household-Level Analysis Interactive Visualization -->
+    <section style="background-color: white; padding: 120px 0;">
+        <div class="grid-container">
+            <h2 style="text-align: left; margin-bottom: 20px; font-size: 3rem; color: #0a1c34; font-weight: 700; font-family: 'Proxima Nova', 'Arial', sans-serif; padding-left: 40px;">The CGE model's scope</h2>
+            <p style="text-align: left; color: #000; margin-bottom: 60px; font-size: 1.4rem; font-family: 'Proxima Nova', 'Arial', sans-serif; font-weight: 300; padding-left: 40px;">The UNDP CGE model's added value of integrating household heterogeneity in both income generation and expenditure within a unified global framework.</p>
+            <div class="grid-x">
+                <div class="cell small-12">
+                    
+                    <div class="household-diagram-wrapper">
+                        <div class="household-interactive-container">
+                            <!-- Base Image -->
+                            <img src="../assets/img/household-analysis-placeholder.png" alt="Household Analysis" class="household-base-image">
+
+                            <!-- Hover areas for each level -->
+                            <div class="household-segment segment-macro" data-segment="macro"></div>
+                            <div class="household-segment segment-meso" data-segment="meso"></div>
+                            <div class="household-segment segment-micro" data-segment="micro"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How CGEM Stands Apart Section -->
+    <section class="stands-apart-section" style="background-color: #f9f9f9; padding: 80px 0;">
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x align-middle">
+                <div class="cell small-12 medium-8 large-9">
+                    <div class="grid-container" style="padding: 0;">
+                        <h2 style="text-align: left; font-size: 2.5rem; margin-bottom: 15px; font-weight: 700; font-family: 'Proxima Nova', 'Arial', sans-serif; padding-left: 40px;">How the CGEM stands apart</h2>
+                        <p class="stands-apart-subtitle" style="text-align: left; font-size: 1.2rem; color: #000; margin-bottom: 40px; font-family: 'Proxima Nova', 'Arial', sans-serif; font-weight: 300; padding-left: 40px;" spellcheck="false">Adding the distributional layer to the <a href="https://www.gtap.agecon.purdue.edu/default.asp" target="_blank" class="gtap-link" spellcheck="false" style="color: #0066cc; text-decoration: none !important; border-bottom: 0 !important; box-shadow: none !important; outline: none !important; transition: all 0.3s ease;"><span style="text-decoration: none !important; border-bottom: 0 !important; box-shadow: none !important;">GTAP</span></a> data</p>
+                    </div>
+                </div>
+                <div class="cell small-12 medium-4 large-3 gtap-logo-cell" style="text-align: right;">
+                    <a href="https://www.gtap.agecon.purdue.edu/default.asp" target="_blank" style="text-decoration: none !important; border-bottom: 0 !important; box-shadow: none !important; background: none !important;">
+                        <img class="gtap-logo-img" src="../assets/img/gtap-logo.png" alt="GTAP Logo" style="max-width: 200px; height: auto;">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="grid-x grid-padding-x" style="margin-top: 40px;">
+                <div class="cell small-12 medium-6 large-3">
+                    <div class="stat-card" style="background-color: #e8e8e8; padding: 40px; text-align: center; border-radius: 8px; transition: all 0.3s ease; cursor: pointer; height: 280px; display: flex; flex-direction: column; justify-content: center;">
+                        <h3 style="font-size: 4rem; font-weight: 900; margin-bottom: 10px;">125</h3>
+                        <p style="font-size: 1rem; color: #333; line-height: 1.5;">countries and regional<br>aggregates covered</p>
+                    </div>
+                </div>
+                
+                <div class="cell small-12 medium-6 large-3">
+                    <div class="stat-card" style="background-color: #e8e8e8; padding: 40px; text-align: center; border-radius: 8px; transition: all 0.3s ease; cursor: pointer; height: 280px; display: flex; flex-direction: column; justify-content: center;">
+                        <h3 style="font-size: 4rem; font-weight: 900; margin-bottom: 10px;">27</h3>
+                        <p style="font-size: 1rem; color: #333; line-height: 1.5;">sectors spanning agriculture, manufacturing, energy, and services</p>
+                    </div>
+                </div>
+                
+                <div class="cell small-12 medium-6 large-3">
+                    <div class="stat-card" style="background-color: #e8e8e8; padding: 40px; text-align: center; border-radius: 8px; transition: all 0.3s ease; cursor: pointer; height: 280px; display: flex; flex-direction: column; justify-content: center;">
+                        <h3 style="font-size: 4rem; font-weight: 900; margin-bottom: 10px;">5</h3>
+                        <p style="font-size: 1rem; color: #333; line-height: 1.5;">household types per country , each with distinct income and consumption profiles</p>
+                    </div>
+                </div>
+                
+                <div class="cell small-12 medium-6 large-3">
+                    <div class="stat-card" style="background-color: #e8e8e8; padding: 40px; text-align: center; border-radius: 8px; transition: all 0.3s ease; cursor: pointer; height: 280px; display: flex; flex-direction: column; justify-content: center;">
+                        <h3 style="font-size: 4rem; font-weight: 900; margin-bottom: 10px;">6</h3>
+                        <p style="font-size: 1rem; color: #333; line-height: 1.5;">income sources per quintile: labor, capital, land, natural resources, remittances, and public transfers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        @media (max-width: 768px) {
+            .gtap-details-title {
+                font-size: 1.7rem !important;
+                line-height: 1.25 !important;
+                white-space: normal !important;
+                padding-left: 0 !important;
+            }
+        }
+    </style>
+
+    <!-- GTAP 12 Details Section -->
+    <section style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 100px 0;">
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="cell small-12" style="text-align: left; margin-bottom: 70px;">
+                    <div class="grid-container" style="padding: 0;">
+                        <h2 class="gtap-details-title" style="font-size: 2.5rem; line-height: 1.3; font-weight: 600; color: #0a1c34; margin: 0; white-space: nowrap; padding-left: 40px;">The UNDP CGE Model builds on GTAP 12 by measuring two critical details</h2>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid-x grid-padding-x" style="max-width: 1100px; margin: 0 auto;">
+                <div class="cell small-12 medium-6" style="margin-bottom: 30px;">
+                    <div class="detail-card" style="background: white; border-radius: 16px; padding: 40px; height: 100%; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: linear-gradient(180deg, #94C4F5 0%, #94C4F5 100%);"></div>
+                        <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #94C4F5 0%, #94C4F5 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                                <span style="font-size: 1.8rem; font-weight: 700; color: #0a1c34;">1</span>
+                            </div>
+                            <h3 style="font-size: 1.6rem; font-weight: 700; margin: 0; color: #0a1c34;">Income disaggregated by quintile</h3>
+                        </div>
+                        <p style="font-size: 1.1rem; font-style: italic; margin-bottom: 25px; color: #6c757d; font-weight: 500;">Who earns what</p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 12px 0; border-bottom: 1px solid #e9ecef; display: flex; align-items: flex-start;">
+                                <span style="color: #94C4F5; margin-right: 12px; font-size: 1.2rem; flex-shrink: 0;">✓</span>
+                                <span style="color: #495057; line-height: 1.6;">Labor income (by type and sex)</span>
+                            </li>
+                            <li style="padding: 12px 0; border-bottom: 1px solid #e9ecef; display: flex; align-items: flex-start;">
+                                <span style="color: #94C4F5; margin-right: 12px; font-size: 1.2rem; flex-shrink: 0;">✓</span>
+                                <span style="color: #495057; line-height: 1.6;">Capital income</span>
+                            </li>
+                            <li style="padding: 12px 0; border-bottom: 1px solid #e9ecef; display: flex; align-items: flex-start;">
+                                <span style="color: #94C4F5; margin-right: 12px; font-size: 1.2rem; flex-shrink: 0;">✓</span>
+                                <span style="color: #495057; line-height: 1.6;">Land</span>
+                            </li>
+                            <li style="padding: 12px 0; border-bottom: 1px solid #e9ecef; display: flex; align-items: flex-start;">
+                                <span style="color: #94C4F5; margin-right: 12px; font-size: 1.2rem; flex-shrink: 0;">✓</span>
+                                <span style="color: #495057; line-height: 1.6;">Natural resources</span>
+                            </li>
+                            <li style="padding: 12px 0; border-bottom: 1px solid #e9ecef; display: flex; align-items: flex-start;">
+                                <span style="color: #94C4F5; margin-right: 12px; font-size: 1.2rem; flex-shrink: 0;">✓</span>
+                                <span style="color: #495057; line-height: 1.6;">Remittances</span>
+                            </li>
+                            <li style="padding: 12px 0; display: flex; align-items: flex-start;">
+                                <span style="color: #94C4F5; margin-right: 12px; font-size: 1.2rem; flex-shrink: 0;">✓</span>
+                                <span style="color: #495057; line-height: 1.6;">Public Transfers (e.g. social assistance)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="cell small-12 medium-6" style="margin-bottom: 30px;">
+                    <div class="detail-card" style="background: white; border-radius: 16px; padding: 40px; height: 100%; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: linear-gradient(180deg, #0468B1 0%, #0468B1 100%);"></div>
+                        <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #0468B1 0%, #0468B1 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                                <span style="font-size: 1.8rem; font-weight: 700; color: white;">2</span>
+                            </div>
+                            <h3 style="font-size: 1.6rem; font-weight: 700; margin: 0; color: #0a1c34;">Consumption disaggregated by quintile</h3>
+                        </div>
+                        <p style="font-size: 1.1rem; font-style: italic; margin-bottom: 25px; color: #6c757d; font-weight: 500;">Who consumes what</p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 12px 0; border-bottom: 1px solid #e9ecef; display: flex; align-items: flex-start;">
+                                <span style="color: #0468B1; margin-right: 12px; font-size: 1.2rem; flex-shrink: 0;">✓</span>
+                                <span style="color: #495057; line-height: 1.6;">Country-specific consumption patterns by income quintile</span>
+                            </li>
+                            <li style="padding: 12px 0; display: flex; align-items: flex-start;">
+                                <span style="color: #0066cc; margin-right: 12px; font-size: 1.2rem; flex-shrink: 0;">✓</span>
+                                <span style="color: #495057; line-height: 1.6;">Different baskets for poor vs rich households</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Work Section -->
+    <section style="background-color: white; padding: 100px 0; font-family: 'Proxima Nova', 'Arial', sans-serif;">
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="cell small-12" style="margin-bottom: 60px;">
+                    <div class="grid-container" style="padding: 0; position: relative;">
+                        <h2 style="font-size: 2.5rem; font-weight: 700; color: #0a1c34; margin-bottom: 10px; padding-left: 40px; font-family: inherit;">Featured work</h2>
+                        <div class="featured-work-controls" aria-label="Featured work navigation">
+                            <button id="featured-prev-btn" class="featured-work-nav" type="button" aria-label="Previous featured report">‹</button>
+                            <button id="featured-next-btn" class="featured-work-nav" type="button" aria-label="Next featured report">›</button>
+                        </div>
+                    </div>
+                        <div id="featured-progress-bar" style="width: 100%; height: 12px; display: flex; margin-top: 12px; margin-bottom: 8px; align-items: center; position: relative; cursor: pointer; user-select: none;">
+                            <div id="progress-bar-bg" style="width: 100%; height: 1px; background: #111; border-radius: 0; position: absolute; top: 9px; left: 0;"></div>
+                            <div id="progress-bar-handle" style="height: 4px; background: #232E3D; border-radius: 0; position: absolute; top: 7px; left: 0; width: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); transition: background 0.2s;"></div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-container" style="max-width: 1200px; padding-top: 0; padding-bottom: 0; margin-top: 0; margin-bottom: 0;">
+            <div id="featured-scroll-area" style="display: flex; flex-direction: row; gap: 60px; overflow-x: auto; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; padding-bottom: 16px; scrollbar-width: none; -ms-overflow-style: none;">
+                <!-- Report 1 -->
+                <div style="flex: 0 0 90%; max-width: 90%; min-width: 600px; display: flex; align-items: stretch; justify-content: center;">
+                    <div style="position: relative; overflow: hidden; border-radius: 0; box-shadow: none; height: 400px; width: 340px; display: flex; align-items: stretch;">
+                        <img src="../assets/img/featured-report-1.jpg" alt="Featured Report" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                    <div style="padding-left: 40px; display: flex; flex-direction: column; justify-content: space-between; height: 400px; min-width: 0; flex: 1;">
+                        <div style="align-self: flex-start; padding-top: 0; padding-bottom: 0;">
+                            <h3 style="font-size: 1.8rem; font-weight: 500; color: #0a1c34; margin-bottom: 20px; line-height: 1.3; font-family: inherit;">Policy Paper: The Impacts of the Middle East Conflict on African Economies</h3>
+                            <p style="font-size: 1.1rem; color: #000; line-height: 1.7; margin-bottom: 0; font-family: inherit;">This joint policy paper maps how global geopolitical shocks impact African economies, from disrupted trade routes and volatile energy and fertilizer markets to exchange‑rate pressures and financial instability.</p>
+                        </div>
+                        <a href="https://www.undp.org/africa/publications/policy-brief-impacts-middle-east-conflict-africa" target="_blank" rel="noopener noreferrer" class="featured-work-btn" style="display: inline-block; padding: 8px 18px; background-color: #D12800; color: white; text-decoration: none; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease; border-radius: 0; align-self: flex-start; margin-top: auto; margin-bottom: 0;" title="UNDP publication">
+                            READ NOW <span style="color: #000; font-size: 1.5rem; vertical-align: middle; margin-left: 4px;">›</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Report 2 -->
+                <div style="flex: 0 0 90%; max-width: 90%; min-width: 600px; display: flex; align-items: stretch; justify-content: center;">
+                    <div style="position: relative; overflow: hidden; border-radius: 0; box-shadow: none; height: 400px; width: 340px; display: flex; align-items: stretch;">
+                        <img src="../assets/img/featured-report-2.jpg" alt="Featured Report" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                    <div style="padding-left: 40px; display: flex; flex-direction: column; justify-content: space-between; height: 400px; min-width: 0; flex: 1;">
+                        <div style="align-self: flex-start; padding-top: 0; padding-bottom: 0;">
+                            <h3 style="font-size: 1.8rem; font-weight: 500; color: #0a1c34; margin-bottom: 20px; line-height: 1.3; font-family: inherit;">From Poverty to Prosperity and Well-Being: The UNDP World CGE Model for Policy Scenario Analysis</h3>
+                            <p style="font-size: 1.1rem; color: #000; line-height: 1.7; margin-bottom: 0; font-family: inherit;">This paper introduces the UNDP World CGE Model, a people-centered global framework covering 125 countries and designed to assess how policy choices and shocks affect economies, households, and vulnerable groups.</p>
+                        </div>
+                        <a href="../assets/documents/CGEPaper_June2026.pdf" target="_blank" rel="noopener noreferrer" class="featured-work-btn" style="display: inline-block; padding: 8px 18px; background-color: #D12800; color: white; text-decoration: none; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease; border-radius: 0; align-self: flex-start; margin-top: auto; margin-bottom: 0;" title="UNDP publication">
+                            READ NOW <span style="color: #000; font-size: 1.5rem; vertical-align: middle; margin-left: 4px;">›</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CGE Model Team Section -->
+    <section style="background-color: #f7f7f7; padding: 80px 0; font-family: 'Proxima Nova', 'Arial', sans-serif;">
+        <div class="grid-container" style="max-width: 1100px;">
+            <div class="grid-x grid-padding-x">
+                <div class="cell small-12" style="margin-bottom: 30px;">
+                    <h2 style="font-size: 2.1rem; font-weight: 700; color: #0a1c34; margin: 0;">CGE Model Team</h2>
+                </div>
+            </div>
+            <div class="grid-x grid-padding-x">
+                <div class="cell small-12 medium-6" style="margin-bottom: 10px;">
+                    <p style="font-size: 1.15rem; color: #1f2d3d; line-height: 1.9; margin: 0;">Babatunde Abidoye</p>
+                    <p style="font-size: 1.15rem; color: #1f2d3d; line-height: 1.9; margin: 0;">Alefa Banda</p>
+                    <p style="font-size: 1.15rem; color: #1f2d3d; line-height: 1.9; margin: 0;">Maria Moz-Christofoletti</p>
+                </div>
+                <div class="cell small-12 medium-6" style="margin-bottom: 10px;">
+                    <p style="font-size: 1.15rem; color: #1f2d3d; line-height: 1.9; margin: 0;">Edvard Orlic</p>
+                    <p style="font-size: 1.15rem; color: #1f2d3d; line-height: 1.9; margin: 0;">Veronique Robichaud</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .featured-work-btn:hover {
+            background-color: #A92000 !important;
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(209, 40, 0, 0.3);
+        }
+        .featured-work-controls {
+            position: absolute;
+            right: 40px;
+            top: 0;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            z-index: 2;
+        }
+        .featured-work-nav {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #d5d8dd;
+            background: #fff;
+            color: #0a1c34;
+            font-size: 1.3rem;
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 0;
+            transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+        }
+        .featured-work-nav:hover {
+            background: #f3f5f7;
+            border-color: #c2c7cf;
+            transform: translateY(-1px);
+        }
+        .featured-work-nav:disabled {
+            opacity: 0.45;
+            cursor: default;
+            transform: none;
+        }
+        #featured-scroll-area::-webkit-scrollbar {
+            display: none;
+        }
+        #featured-scroll-area {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            scroll-snap-type: x mandatory;
+        }
+        #featured-progress-bar {
+            touch-action: pan-x;
+        }
+        #featured-scroll-area > div {
+            scroll-snap-align: start;
+        }
+    </style>
+        <script>
+        // Featured progress bar navigation logic
+        (function() {
+            var scrollArea = document.getElementById('featured-scroll-area');
+            var bar = document.getElementById('featured-progress-bar');
+            var handle = document.getElementById('progress-bar-handle');
+            var barBg = document.getElementById('progress-bar-bg');
+            var prevBtn = document.getElementById('featured-prev-btn');
+            var nextBtn = document.getElementById('featured-next-btn');
+            var autoRotateTimer = null;
+            if (!scrollArea || !bar || !handle || !barBg || !prevBtn || !nextBtn) return;
+
+            function getStep() {
+                var slide = scrollArea.querySelector(':scope > div');
+                if (!slide) return scrollArea.clientWidth;
+                var gap = parseFloat(getComputedStyle(scrollArea).gap || '0') || 0;
+                return slide.getBoundingClientRect().width + gap;
+            }
+
+            function updateHandle() {
+                var scrollW = scrollArea.scrollWidth - scrollArea.clientWidth;
+                var percent = scrollW > 0 ? scrollArea.scrollLeft / scrollW : 0;
+                var barW = bar.offsetWidth;
+                var handleW = Math.max(barW * (scrollArea.clientWidth / scrollArea.scrollWidth), 80);
+                var left = percent * (barW - handleW);
+                handle.style.width = handleW + 'px';
+                handle.style.left = left + 'px';
+                prevBtn.disabled = scrollArea.scrollLeft <= 0;
+                nextBtn.disabled = scrollArea.scrollLeft >= scrollW - 1;
+            }
+
+            function goToSlide(direction) {
+                var step = getStep();
+                var scrollW = scrollArea.scrollWidth - scrollArea.clientWidth;
+                var target = scrollArea.scrollLeft + (direction * step);
+                target = Math.max(0, Math.min(scrollW, target));
+                scrollArea.scrollTo({ left: target, behavior: 'smooth' });
+            }
+
+            function resetAutoRotateTimer() {
+                if (autoRotateTimer) {
+                    window.clearInterval(autoRotateTimer);
+                }
+                autoRotateTimer = window.setInterval(function() {
+                    var scrollW = scrollArea.scrollWidth - scrollArea.clientWidth;
+                    if (scrollW <= 0) return;
+                    var nearEnd = scrollArea.scrollLeft >= scrollW - 1;
+                    var nearStart = scrollArea.scrollLeft <= 0;
+                    if (nearEnd) {
+                        goToSlide(-1);
+                    } else if (nearStart) {
+                        goToSlide(1);
+                    } else if (scrollArea.scrollLeft < scrollW / 2) {
+                        goToSlide(1);
+                    } else {
+                        goToSlide(-1);
+                    }
+                }, 5000);
+            }
+
+            scrollArea.addEventListener('scroll', updateHandle);
+            window.addEventListener('resize', updateHandle);
+            setTimeout(updateHandle, 300);
+
+            prevBtn.addEventListener('click', function() {
+                goToSlide(-1);
+                resetAutoRotateTimer();
+            });
+            nextBtn.addEventListener('click', function() {
+                goToSlide(1);
+                resetAutoRotateTimer();
+            });
+
+            // Click or drag logic
+            var dragging = false, dragStartX = 0, dragStartScroll = 0;
+            handle.addEventListener('mousedown', function(e) {
+                dragging = true;
+                dragStartX = e.clientX;
+                dragStartScroll = scrollArea.scrollLeft;
+                document.body.style.userSelect = 'none';
+            });
+            document.addEventListener('mousemove', function(e) {
+                if (!dragging) return;
+                var barW = bar.offsetWidth;
+                var handleW = handle.offsetWidth;
+                var dx = e.clientX - dragStartX;
+                var scrollW = scrollArea.scrollWidth - scrollArea.clientWidth;
+                var maxMove = barW - handleW;
+                var percent = (handle.offsetLeft + dx) / maxMove;
+                percent = Math.max(0, Math.min(1, percent));
+                scrollArea.scrollLeft = percent * scrollW;
+            });
+            document.addEventListener('mouseup', function() {
+                dragging = false;
+                document.body.style.userSelect = '';
+            });
+
+            // Click on bar to jump
+            barBg.addEventListener('click', function(e) {
+                var rect = barBg.getBoundingClientRect();
+                var x = e.clientX - rect.left;
+                var barW = bar.offsetWidth;
+                var handleW = handle.offsetWidth;
+                var percent = (x - handleW/2) / (barW - handleW);
+                percent = Math.max(0, Math.min(1, percent));
+                var scrollW = scrollArea.scrollWidth - scrollArea.clientWidth;
+                scrollArea.scrollLeft = percent * scrollW;
+                resetAutoRotateTimer();
+            });
+
+            // Touch support
+            handle.addEventListener('touchstart', function(e) {
+                dragging = true;
+                dragStartX = e.touches[0].clientX;
+                dragStartScroll = scrollArea.scrollLeft;
+            });
+            document.addEventListener('touchmove', function(e) {
+                if (!dragging) return;
+                var barW = bar.offsetWidth;
+                var handleW = handle.offsetWidth;
+                var dx = e.touches[0].clientX - dragStartX;
+                var scrollW = scrollArea.scrollWidth - scrollArea.clientWidth;
+                var maxMove = barW - handleW;
+                var percent = (handle.offsetLeft + dx) / maxMove;
+                percent = Math.max(0, Math.min(1, percent));
+                scrollArea.scrollLeft = percent * scrollW;
+            }, {passive: false});
+            document.addEventListener('touchend', function() {
+                dragging = false;
+                resetAutoRotateTimer();
+            });
+
+            // Initial update
+            updateHandle();
+            resetAutoRotateTimer();
+        })();
+        </script>
+    
+    <style>
+        .detail-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.12) !important;
+        }
+    </style>
+
+    <style>
+        .stat-card h3 {
+            font-family: 'Proxima Nova', 'Arial', sans-serif !important;
+            font-size: 6.5rem !important;
+            color: transparent;
+            -webkit-text-stroke: 2px #000;
+            text-stroke: 2px #000;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            background-color: #ffd700 !important;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .stat-card:hover h3 {
+            color: #000 !important;
+            -webkit-text-stroke: 0;
+            text-stroke: 0;
+        }
+        
+        .gtap-link,
+        .gtap-link:link,
+        .gtap-link:visited,
+        .gtap-link:active,
+        .gtap-link:focus {
+            text-decoration: none !important;
+            border-bottom: none !important;
+        }
+        
+        .gtap-link:hover {
+            color: #ffd700 !important;
+            text-decoration: none !important;
+        }
+    </style>
+
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    
+        <!-- ++++++++++++++++++++++ FOOTER  ++++++++++++++++++++++-->
+
+
+                        </div>
+
+                    </div>
+
+
+
+
+                    <!--<div class="grid-x grid-padding-x  align-bottom ">
+                        <div class="cell small-12 medium-12 large-12">
+                            <h6><span class="text-extrabold">WHAT WE'RE LEARNING </span></h6>
+                            <h2> Global Patterns and Emerging Insights
+                            </h2>
+
+                            <p class="text-extrabold">SDG Push is about realizing ambition and redefining how we advance impact.</p>
+
+                            <p>It combines data innovation, systems approaches, and collective intelligence to support countries with their development ambitions.</p>
+
+                            <p>
+
+                                The SDG Push Framework is a comprehensive and evidence-based process tailored to individual country contexts. It uncovers development insights to guide integrated policy actions and acceleration pathways to 2030. </p>
+
+
+
+                           <p>Here are the most important patterns – some encouraging, others needing more attention. Acceleration is powered by <span class="text-extrabold">SDG interlinkages</span>: SDG combinations with the best potential to accelerate progress. This helps countries navigate complex and often colliding development challenges. </p>
+
+                        </div>
+                        <div class="cell small-12 medium-6">
+                        </div>
+
+                    </div>-->
+
+
+
+
+                    <!--<div class="grid-x grid-padding-x  align-bottom ">
+                        <div class="cell small-12 medium-12 large-12">
+
+
+                            <h3>SDG Push Reports – Unlocking New Pathways to SDG Acceleration </h3>
+
+                            <p>We piloted SDG Push in five countries – <span class="text-extrabold">Indonesia, Moldova, Namibia, Peru, and South Africa</span> – in collaboration with governments and national partners, providing a roadmap to encourage inclusive growth and development targets. </p>
+
+                            <p>These reports provide a detailed overview of this five-step process, evaluating the development gaps, challenges, and drivers, and at the same time systematically assessing the costs, interlinkages, and trade-offs in each country. </p>
+
+                            <p>Each report deep dives into key findings of the 'SDG Push Scenario', and the financial constraints on delivering the necessary development interventions to accelerate the achievement of the SDGs. </p>
+
+                        </div>
+                        <div class="cell small-12 medium-6">
+                        </div>
+
+                    </div>-->
+
+
+
+                    <!--<div class="grid-x grid-padding-x align-justify" style="padding: 6% 0% 0% 0%">
+                        <div class="cell small-12 medium-12 large-12">
+
+                            <div class="flag-container">
+
+                                <div class="flag" id="toc1">
+                                    <a target="_blank" href="">
+                                        <img src="assets/img/flags/Indonesia.svg" alt="Flag of Indonesia">
+
+
+                                        <br><br>
+                                        <a class="cta__link cta--arrow" href="#">
+                                            Indonesia
+                                            <i></i>
+                                        </a>
+                                    </a>
+                                </div>
+
+                                <div class="flag">
+                                    <a target="_blank" href="">
+                                        <img src="assets/img/flags/Moldova.svg" alt="Flag of Moldova">
+                                        <br><br>
+                                        <a class="cta__link cta--arrow" href="#">
+                                            Moldova
+                                            <i></i>
+                                        </a>
+
+                                    </a>
+                                </div>
+
+                                <div class="flag">
+                                    <a target="_blank" href="">
+                                        <img src="assets/img/flags/Namibia.svg" alt="Flag of Namibia">
+                                        <br><br>
+                                        <a class="cta__link cta--arrow" href="#">
+                                            Namibia
+                                            <i></i>
+                                        </a>
+
+                                    </a>
+                                </div>
+
+
+
+                                <div class="flag">
+                                    <a target="_blank" href="">
+                                        <img src="assets/img/flags/Peru.svg" alt="Flag of Peru">
+
+                                        <br><br>
+                                        <a class="cta__link cta--arrow" href="#">
+                                            Peru
+                                            <i></i>
+                                        </a>
+
+                                    </a>
+                                </div>
+
+                                <div class="flag">
+                                    <a target="_blank" href="">
+                                        <img src="assets/img/flags/South_Africa.svg" alt="Flag of South Africa">
+                                        <br><br>
+                                        <a class="cta__link cta--arrow" href="#">
+                                            South Africa
+                                            <i></i>
+                                        </a>
+
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>-->
+                </div>
+
+
+
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    
+        <!-- ++++++++++++++++++++++ FOOTER  ++++++++++++++++++++++-->
+
+        <footer class="footer">
+            <div class="grid-x">
+                <div class="cell medium-10 medium-offset-1">
+                    <div class="grid-x footer-top">
+                        <div class="cell medium-5">
+                            <div class="footer-logo">
+                                <a href="https://www.undp.org">
+                                    <img src="../assets/img/undp-logo-white.svg" alt="UNDP Logo" />
+                                </a>
+                                <h5 tabindex="0">
+                                    United Nations
+                                    <br />
+                                    Development Programme
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="cell medium-5 show-large">
+                            <ul class="footer-icons">
+
+                                <li><a href="https://twitter.com/undp/" class="twitter" title="Twitter">twitter</a></li>
+                                <li><a href="https://www.linkedin.com/company/undp/" class="linkedin"
+                                        title="LinkedIn">linkedIn</a></li>
+                                <li><a href="https://www.facebook.com/UNDP/" class="facebook"
+                                        title="Facebook">facebook</a></li>
+                                <li>
+                                    <a href="https://www.instagram.com/UNDP/" class="instagram"
+                                        title="Instagram">instagram</a>
+                                </li>
+
+                                <li><a href="https://www.youtube.com/UNDP/" class="youtube" title="Youtube">youtube</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid-x footer-bottom">
+                        <div class="cell medium-5">
+                            <p tabindex="0">© 2026 United Nations Development Programme</p>
+                        </div>
+                        <div class="cell medium-6">
+                            <ul class="footer-lists">
+                                <li><a href="https://www.undp.org/accountability/audit/investigations">Report fraud,
+                                        abuse, misconduct</a></li>
+                                <li><a
+                                        href="https://www.undp.org/accountability/audit/social-and-environmental-compliance-review-and-stakeholder-response-mechanism">Submit
+                                        social or environmental complaint</a></li>
+                                <li><a href="https://www.undp.org/scam-alert">Scam alert</a></li>
+                                <li><a href="https://www.undp.org/copyright-terms-use">Terms of use</a></li>
+                            </ul>
+                            <div class="show-small">
+                                <ul class="footer-icons">
+
+                                    <li><a href="https://twitter.com/undp/" class="twitter" title="Twitter">twitter</a>
+                                    </li>
+                                    <li><a href="https://www.linkedin.com/company/undp/" class="linkedin"
+                                            title="LinkedIn">linkedIn</a></li>
+                                    <li><a href="https://www.facebook.com/UNDP/" class="facebook"
+                                            title="Facebook">facebook</a></li>
+                                    <li>
+                                        <a href="https://www.instagram.com/UNDP/" class="instagram"
+                                            title="Instagram">instagram</a>
+                                    </li>
+
+                                    <li><a href="https://www.youtube.com/UNDP/" class="youtube"
+                                            title="Youtube">youtube</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        </div>
+
+    </main>
+
+
+
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+
+
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/tiles.js"></script>
+    <script src="../assets/js/aos.js"></script>
+    <script src="../assets/js/swiper.min.js"></script>
+    <script src="../assets/js/viewport.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js'></script>
+    <script src="../../assets/js/slider-script.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+       
+
+    <script>
+        const countries = [
+            "Sustainability", "Innovation", "Transformation", "Resilience", "Equality", "Impact", "Our Goals", "Solutions",
+            "Peace", "Decent work", // Adding Peace and Decent work
+            "Sustainability", "Innovation", "Transformation", "Resilience", "Equality", "Impact", "Our Goals", "Solutions",
+            "Peace", "Decent work", // Adding Peace and Decent work
+            "Sustainability", "Innovation", "Transformation", "Resilience", "Equality", "Impact", "Our Goals", "Solutions",
+            "Peace", "Decent work", // Adding Peace and Decent work
+            "Sustainability", "Innovation", "Transformation", "Resilience", "Equality", "Impact", "Our Goals", "Solutions",
+            "Peace", "Decent work", // Adding Peace and Decent work
+            "Sustainability", "Innovation", "Transformation", "Resilience", "Equality", "Impact", "Our Goals", "Solutions",
+            "Peace", "Decent work", // Adding Peace and Decent work
+            "Sustainability", "Innovation", "Transformation", "Resilience", "Equality", "Impact", "Our Goals", "Solutions",
+            "Peace", "Decent work" // Adding Peace and Decent work
+        ];
+
+
+        const dynamicWordElement = document.getElementById("dynamic-word");
+        let currentCountryIndex = 0;
+
+        function isMobileDevice() {
+            return window.innerWidth < 768; // Adjust the threshold as needed
+        }
+
+        function changeWord() {
+            const currentWord = countries[currentCountryIndex];
+
+            // Check if it's a mobile device and if the current word has more than 10 characters
+            if (isMobileDevice() && currentWord.length > 9) {
+                currentCountryIndex = (currentCountryIndex + 1) % countries.length;
+                setTimeout(changeWord, 0); // Skip to the next country
+                return;
+            }
+
+            dynamicWordElement.textContent = currentWord;
+
+            if (currentWord === "Our Goals") {
+                dynamicWordElement.style.animation = "spin-in-out 0.5s";
+                setTimeout(() => {
+                    dynamicWordElement.style.animation = "spin-out-in 1s";
+                    currentCountryIndex = (currentCountryIndex + 1) % countries.length;
+                    setTimeout(changeWord, 700); // Display "everyone" for 1 second and move to the next country
+                }, 500); // Show "everyone" for 500ms
+            } else {
+                dynamicWordElement.style.animation = "spin-out-in 1s";
+                setTimeout(() => {
+                    dynamicWordElement.style.animation = "spin-in-out 1s";
+                    currentCountryIndex = (currentCountryIndex + 1) % countries.length;
+                    setTimeout(changeWord, 100); // Loop through countries every 350ms for non-"everyone" cases
+                }, 100);
+            }
+        }
+
+        setTimeout(changeWord, 500); // Start the loop after 1 second
+    </script>
+     <script>
+           
+            document.addEventListener('DOMContentLoaded', function () {
+                const lottieContainers = document.querySelectorAll('lottie-player');
+
+                const options = {
+                    root: null, // Use the viewport as the root
+                    rootMargin: "0px", // You can adjust this margin as needed
+                    threshold: 0.5, // Adjust this threshold as needed
+                };
+
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            // Check if the animation is within an active tab
+                            const tabId = entry.target.getAttribute('data-tab-id');
+                            const tabButton = document.querySelector(`[href="#${tabId}"]`);
+                            if (tabButton && tabButton.parentElement.classList.contains('is-active')) {
+                                entry.target.play();
+                                observer.unobserve(entry.target); // Stop observing once played
+                            }
+                        }
+                    });
+                }, options);
+
+                lottieContainers.forEach((container) => {
+                    observer.observe(container);
+                });
+
+                
+            });
+        </script>
+        <script>
+        function toggleOptionsList() {
+            var optionsList = document.querySelector('[data-select-options]');
+            optionsList.style.display = optionsList.style.display === 'none' ? 'block' : 'none';
+        }
+
+        document.addEventListener('click', function (event) {
+            var selectBox = document.querySelector('.select-box');
+            var optionsList = document.querySelector('[data-select-options]');
+
+            // If the clicked element is outside of the select box
+            if (!selectBox.contains(event.target)) {
+                // Hide the options list
+                optionsList.style.display = 'none';
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <script>
+        LottieInteractivity.create({
+            player: '#firstLottie',
+            mode: "scroll",
+            actions: [{
+                visibility: [0, 1.0],
+                type: "seek",
+                frames: [0, 120],
+            }]
+        });
+    </script>
+    <script>
+        LottieInteractivity.create({
+            player: '#bubbles',
+            mode: "scroll",
+            actions: [{
+                visibility: [0, 1.0],
+                type: "seek",
+                frames: [0, 180],
+            }]
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="../assets/js/modal.min.js"></script>
+    <script>
+        $(function () {
+            modal();
+        });
+    </script>
+    <script>
+        $(function () {
+            swiper('.stats-slider');
+        });
+    </script>
+    <script>
+        // Define the custom cursor SVG as a base64 encoded string
+        var customCursorSvgBase64 = "PHN2ZyB3aWR0aD0iODEiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCA4MSAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik02OS41IDFMNzkuNSA5Ljk5NzgxTTc5LjUgOS5 5OTc4MUwwIDkuOTk3ODEiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMiIvPg0KPC9zdmc+";
+
+        // Decode the base64 string to get the SVG string
+        var customCursorSvg = atob(customCursorSvgBase64);
+
+        // Get the element with the ID "section-10"
+        var section10 = document.getElementById("section-10");
+
+        // Add an event listener to listen for mouseover event
+        section10.addEventListener("mouseover", function () {
+            // Check if the ID is "section-10"
+            if (section10.id === "section-10") {
+                // Modify the SVG string to set the fill color to white
+                var modifiedSvg = customCursorSvg.replace("fill=\"none\"", "fill=\"white\"");
+                // Set the cursor style to a custom cursor with the modified SVG as the URL
+                section10.style.cursor = "url('data:image/svg+xml;base64," + btoa(modifiedSvg) + "'), auto";
+            } else {
+                // Set the cursor style to a custom cursor with the original SVG as the URL
+                section10.style.cursor = "url('data:image/svg+xml;base64," + customCursorSvgBase64 + "'), auto";
+            }
+        });
+    </script>
+
+    <!-- CGE Model Interactive Functionality -->
+    <script>
+        // Info content for each segment
+        const segmentInfo = {
+            macro: {
+                title: "SP: PROSPERITY FOR ALL | SUSTAINABLE FINANCE",
+                subtitle: "What happens to the economy as a whole?",
+                iconImg: "../assets/img/star-coin.svg",
+                htmlContent: `
+                    <ul>
+                        <li>GDP, consumption, investment and fiscal balance</li>
+                        <li>Sectoral output across 27 industries and value chains</li>
+                        <li>Industrial policy and structural transformation (e.g., sectoral incentives, local content, export promotion)</li>
+                        <li>Bilateral and multilateral trade impacts (e.g., tariff changes, FTAs, rules of origin)</li>
+                        <li>External accounts and global linkages</li>
+                    </ul>
+                `,
+                cssClass: "info-macro"
+            },
+            jobs: {
+                title: "SP: JOBS FOR PROSPERITY FACILITY (J4PF) | GENDER EQUALITY",
+                subtitle: "What happens to jobs — and whose jobs?",
+                iconSvg: `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="2.5"></circle><circle cx="16" cy="8" r="2.5"></circle><path d="M4.5 18c.8-2.4 2.2-3.6 3.5-3.6s2.7 1.2 3.5 3.6"></path><path d="M12.5 18c.8-2.4 2.2-3.6 3.5-3.6s2.7 1.2 3.5 3.6"></path></svg>`,
+                htmlContent: `
+                    <ul>
+                        <li>Employment by skill and sex</li>
+                        <li>Wage dynamics and skill premiums</li>
+                        <li>Job creation vs displacement</li>
+                        <li>Inclusiveness of employment</li>
+                    </ul>
+                `,
+                cssClass: "info-jobs"
+            },
+            climate: {
+                title: "SP: HEALTHY PLANET | CRISIS RESILIENCE",
+                subtitle: "Who bears the burden — and where?",
+                iconImg: "../assets/img/globe222.png",
+                htmlContent: `
+                    <ul>
+                        <li>Climate and energy policy impacts (e.g., carbon pricing, energy transition)</li>
+                        <li>Revenue recycling and redistribution options</li>
+                        <li>Cross-country and regional impacts</li>
+                        <li>Vulnerability of LDCs and fragile economies</li>
+                        <li>Global commodity and food price shocks</li>
+                    </ul>
+                `,
+                cssClass: "info-climate"
+            },
+            household: {
+                title: "SP: PROSPERITY FOR ALL | SOCIAL PROTECTION",
+                subtitle: "Who gains and who loses?",
+                iconSvg: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"></path><path d="M6 10.5V20h12v-9.5"></path><circle cx="10" cy="14.5" r="1.5"></circle><circle cx="14" cy="14.5" r="1.5"></circle></svg>`,
+                htmlContent: `
+                    <ul>
+                        <li>Income by quintile (Q1-Q5)</li>
+                        <li>Cost of living (price effects)</li>
+                        <li>Consumption patterns across households</li>
+                        <li>Role of transfers and remittances</li>
+                    </ul>
+                `,
+                cssClass: "info-household"
+            }
+        };
+
+        // Get all segments
+        const cgeSegments = document.querySelectorAll('.cge-hit-segment, .segment-overlay');
+        const cgeInfoPanel = document.getElementById('cgeInfoPanel');
+
+        cgeSegments.forEach(segment => {
+            segment.addEventListener('mouseenter', function() {
+                const segmentType = this.getAttribute('data-segment');
+                const info = segmentInfo[segmentType];
+                
+                if (info) {
+                    const icon = info.iconImg
+                        ? (info.iconColor
+                            ? `<div class="info-icon-badge"><span class="info-icon-mask" style="--icon-url:url('${info.iconImg}');--icon-color:${info.iconColor};--icon-scale:${info.iconScale || 1};" aria-hidden="true"></span></div>`
+                            : `<div class="info-icon-badge"><img src="${info.iconImg}" alt=""></div>`)
+                        : (info.iconSvg ? `<div class="info-icon-badge">${info.iconSvg}</div>` : "");
+                    const subtitle = info.subtitle
+                        ? `<div class="info-subhead"><div class="info-subtitle">${info.subtitle}</div></div>`
+                        : "";
+                    const content = info.htmlContent ? info.htmlContent : `<p>${info.content}</p>`;
+                    cgeInfoPanel.innerHTML = icon
+                        ? `<div class="info-layout">${icon}<div class="info-text-column"><h3>${info.title}</h3>${subtitle}${content}</div></div>`
+                        : `<div class="info-text-column"><h3>${info.title}</h3>${subtitle}${content}</div>`;
+                    cgeInfoPanel.className = 'info-panel ' + info.cssClass;
+                }
+            });
+
+            segment.addEventListener('mouseleave', function() {
+                cgeInfoPanel.innerHTML = '<p class="info-default">Hover over the image to see questions the CGE model can answer</p>';
+                cgeInfoPanel.className = 'info-panel';
+            });
+        });
+    </script>
+
+    <!-- Household Analysis Interactive Functionality -->
+    <script>
+        // Info content for each household segment
+        const householdSegmentInfo = {
+            macro: {
+                title: "Macro Level",
+                content: "National-level analysis examining aggregate economic indicators, GDP distribution, national poverty rates, and overall income inequality metrics across the entire population.",
+                cssClass: "household-info-macro"
+            },
+            meso: {
+                title: "Meso Level",
+                content: "Regional and sectoral analysis focusing on provincial variations, urban-rural disparities, industry-specific impacts, and community-level economic dynamics.",
+                cssClass: "household-info-meso"
+            },
+            micro: {
+                title: "Micro Level",
+                content: "Household and individual-level analysis examining income distribution by quintile, household consumption patterns, individual welfare impacts, and disaggregated outcomes by gender and skill level.",
+                cssClass: "household-info-micro"
+            }
+        };
+
+        // Get all household segments
+        const householdSegments = document.querySelectorAll('.household-segment');
+        const householdInfoPanel = document.getElementById('householdInfoPanel');
+
+        if (!householdInfoPanel) {
+            // Section text panel removed by design; skip hover info binding.
+            return;
+        }
+
+        householdSegments.forEach(segment => {
+            segment.addEventListener('mouseenter', function() {
+                const segmentType = this.getAttribute('data-segment');
+                const info = householdSegmentInfo[segmentType];
+                
+                if (info) {
+                    householdInfoPanel.innerHTML = `
+                        <h3>${info.title}</h3>
+                        <p>${info.content}</p>
+                    `;
+                    householdInfoPanel.className = 'household-info-panel ' + info.cssClass;
+                }
+            });
+
+            segment.addEventListener('mouseleave', function() {
+                householdInfoPanel.innerHTML = '<p class="household-info-default">Hover over any level to see detailed information</p>';
+                householdInfoPanel.className = 'household-info-panel';
+            });
+        });
+    </script>
+</body>
+
+</html>
