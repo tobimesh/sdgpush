@@ -1,4 +1,9 @@
 <style>
+    .country-header .header {
+        min-height: 0 !important;
+        height: auto !important;
+        padding: 0 !important;
+    }
     @media (max-width: 768px) {
         .country-header .header .grid-container.fluid {
             padding-left: 0 !important;
@@ -10,50 +15,77 @@
             padding: 0 !important;
             margin: 0 !important;
         }
+        .country-header .header .grid-container.fluid,
+        .country-header .header .grid-x,
+        .country-header .header section {
+            padding: 0 !important;
+            margin: 0 !important;
+        }
         .country-header .header .cell.top-left {
             width: 100% !important;
             max-width: 100% !important;
             display: flex !important;
             flex-direction: row !important;
             align-items: center !important;
-            padding: 10px 0 10px 10px !important;
+            padding: 0 0 0 10px !important;
             margin: 0 !important;
-            gap: 12px !important;
+            gap: 8px !important;
         }
         .country-header .logo {
-            margin-bottom: 0 !important;
-            margin-right: 10px !important;
-            width: 48px !important;
-            height: 48px !important;
+            margin: 0 !important;
+            width: auto !important;
+            height: auto !important;
             display: inline-block !important;
+            flex-shrink: 0 !important;
+            position: relative !important;
+            z-index: 11 !important;
+            transform: translateY(5px);
+            transition: transform 0.2s ease;
+        }
+        .country-header.scrolled .logo {
+            transform: translateY(0) !important;
         }
         .country-header .logo img {
-            max-width: 48px !important;
-            max-height: 48px !important;
-            width: 48px !important;
-            height: 48px !important;
+            width: auto !important;
+            height: 64px !important;
+            max-width: none !important;
+            max-height: none !important;
+            display: block !important;
         }
         .country-header .site-title {
             display: inline-block !important;
-            font-size: 1.1rem !important;
+            font-size: 0.95rem !important;
             font-weight: 600 !important;
             margin: 0 !important;
             padding: 0 !important;
             line-height: 1.2 !important;
         }
         .country-header .site-title span a {
-            font-size: 1.1rem !important;
-            font-weight: 600 !important;
+            font-size: 0.95rem !important;
+            font-weight: 700 !important;
             color: #111 !important;
             padding: 0 !important;
             margin: 0 !important;
             text-decoration: none !important;
         }
         .country-header {
-            position: relative !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
             z-index: 10 !important;
-            background: #fff !important;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+            background: #d0d2d4 !important;
+            box-shadow: none !important;
+            border-bottom: none !important;
+            min-height: 0 !important;
+            height: auto !important;
+            padding: 0 !important;
+        }
+        .country-header .header {
+            padding: 0 !important;
+            margin: 0 !important;
+            min-height: 0 !important;
+            height: auto !important;
         }
     }
     @media (max-width: 768px) {
@@ -85,7 +117,7 @@
             left: 0 !important;
             width: 100vw !important;
             height: 100% !important;
-            padding: 12px 5vw 0 4vw !important;
+            padding: 40px 5vw 0 4vw !important;
             background: linear-gradient(90deg, rgba(0,0,0,0.08) 30%, rgba(0,0,0,0.00) 100%) !important;
             box-sizing: border-box !important;
             z-index: 2;
@@ -244,65 +276,6 @@
     .stands-apart-section .stands-apart-subtitle {
         margin-bottom: 18px !important;
     }
-    #featured-scroll-area {
-        gap: 18px !important;
-        padding-bottom: 8px !important;
-    }
-    #featured-scroll-area > div {
-        min-width: 90vw !important;
-        max-width: 95vw !important;
-        flex: 0 0 95vw !important;
-        height: auto !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        justify-content: flex-start !important;
-    }
-    #featured-scroll-area > div > div:first-child {
-        width: 100% !important;
-        height: auto !important;
-        max-width: 100% !important;
-    }
-    #featured-scroll-area > div > div:last-child {
-        width: 100% !important;
-        height: auto !important;
-        min-height: 0 !important;
-        padding-left: 0 !important;
-        padding-top: 14px !important;
-        justify-content: flex-start !important;
-        gap: 10px !important;
-    }
-    #featured-scroll-area > div > div:last-child > div {
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-    }
-    #featured-scroll-area > div > div:last-child a {
-        margin-top: 0 !important;
-    }
-    #featured-scroll-area img {
-        height: auto !important;
-        width: 100% !important;
-        object-fit: contain !important;
-        aspect-ratio: 16 / 9 !important;
-    }
-    #featured-scroll-area h3 {
-        font-size: 1.1rem !important;
-        margin-bottom: 10px !important;
-    }
-    #featured-scroll-area p {
-        font-size: 0.95rem !important;
-    }
-    #featured-progress-bar {
-        height: 8px !important;
-        margin-top: 6px !important;
-        margin-bottom: 4px !important;
-    }
-    #progress-bar-bg {
-        display: block !important;
-    }
-    #progress-bar-handle {
-        height: 2px !important;
-        box-shadow: none !important;
-    }
 }
 
 @media (max-width: 480px) {
@@ -317,10 +290,6 @@
     }
     .footer-logo img {
         max-width: 80px !important;
-    }
-    #featured-scroll-area img {
-        height: auto !important;
-        object-fit: contain !important;
     }
 }
 </style>
@@ -390,6 +359,123 @@
     <link rel="stylesheet" href="../assets/css/tiles.css">
 
     <link rel="stylesheet" href="../assets/css/reports-2024.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/fixed-size-carousel.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css">
+    <style>
+        .fixed-carousel {
+            max-height: 560px !important;
+            overflow: hidden !important;
+        }
+        .fixed-carousel .swiper-wrapper {
+            height: 420px !important;
+        }
+        .fixed-carousel .swiper-slide,
+        .fixed-carousel .slider-slide {
+            height: 420px !important;
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: stretch !important;
+        }
+        .fixed-carousel .slider-slide .fixed-carousel__image-wrap {
+            flex: 0 0 23.563rem !important;
+            max-width: 23.563rem !important;
+            height: 420px !important;
+            background: linear-gradient(
+                to bottom,
+                #dddfe0 calc(100% - 140px),
+                #1a1a1a calc(100% - 140px),
+                #1a1a1a calc(100% - 139px),
+                #abadb0 calc(100% - 139px)
+            ) !important;
+            display: flex !important;
+            align-items: flex-end !important;
+            justify-content: center !important;
+            padding: 0 70px 50px !important;
+            box-sizing: border-box !important;
+            position: relative !important;
+        }
+        /* left shadow column */
+        .fixed-carousel .slider-slide .fixed-carousel__image-wrap::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important; left: 0 !important;
+            width: 60px !important; height: 100% !important;
+            background: linear-gradient(to right, rgba(0,0,0,0.22) 0%, transparent 100%) !important;
+            z-index: 2 !important;
+            pointer-events: none !important;
+        }
+        /* right shadow column + bottom floor */
+        .fixed-carousel .slider-slide .fixed-carousel__image-wrap::after {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important; right: 0 !important;
+            width: 60px !important; height: 100% !important;
+            background: linear-gradient(to left, rgba(0,0,0,0.22) 0%, transparent 100%) !important;
+            z-index: 2 !important;
+            pointer-events: none !important;
+        }
+        .fixed-carousel .slider-slide .fixed-carousel__image-wrap .fixed-carousel__image {
+            width: 100% !important;
+            height: 310px !important;
+            max-width: none !important;
+            object-fit: cover !important;
+            object-position: center top !important;
+            display: block !important;
+            position: relative !important;
+            z-index: 1 !important;
+            box-shadow: -18px 22px 40px rgba(0,0,0,0.60), -6px 8px 14px rgba(0,0,0,0.35) !important;
+            flex: none !important;
+        }
+        .fixed-carousel .slide-content {
+            flex: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            height: 420px !important;
+        }
+        .fixed-carousel .slide-content-wrap {
+            flex: 1 !important;
+        }
+        .fixed-carousel .slide-content-wrap h6 {
+            font-family: 'Proxima Nova', Arial, sans-serif !important;
+            font-size: 0.75rem !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.08em !important;
+            text-transform: uppercase !important;
+            color: #232e3d !important;
+            margin-bottom: 12px !important;
+        }
+        .fixed-carousel .slide-content-wrap h4 {
+            font-family: 'Proxima Nova', Arial, sans-serif !important;
+            font-size: 1.75rem !important;
+            font-weight: 400 !important;
+            line-height: 1.25 !important;
+            color: #232e3d !important;
+            margin-bottom: 1.25rem !important;
+        }
+        .fixed-carousel .slide-content-wrap p {
+            font-family: 'Proxima Nova', Arial, sans-serif !important;
+            font-size: 1rem !important;
+            font-weight: 400 !important;
+            line-height: 1.7 !important;
+            color: #232e3d !important;
+        }
+        @media (max-width: 47.9375em) {
+            .fixed-carousel .slider-slide {
+                flex-direction: column !important;
+            }
+            .fixed-carousel__image-wrap {
+                flex: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 260px !important;
+                padding: 24px 20px 0 20px !important;
+            }
+            .fixed-carousel .slide-content {
+                height: auto !important;
+            }
+        }
+    </style>
 
     <!-- CGE Model Interactive Visualization Styles -->
     <style>
@@ -1056,7 +1142,7 @@
             j.src =
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-NDW6MV6');
+        })(window, document, 'script', 'dataLayer', 'GTM-TXNF7X72');
     </script>
 </head>
 
@@ -1066,11 +1152,11 @@
 
 
 <body style="margin:0;padding:0;box-sizing:border-box;width:100vw;overflow-x:hidden;background:#fff;">
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDW6MV6" height="0" width="0"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXNF7X72" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
 
 
-    <header class="country-header" style="z-index: 999;">
+    <header class="country-header" style="z-index: 999; background: #d0d2d4; height: auto; min-height: 0;">
         <section class="header">
             <div class="grid-container fluid">
                 <div class="grid-x grid-margin-x align-content-middle">
@@ -1080,7 +1166,7 @@
                         </a>
                         <div class="site-title">
 
-                            <span><a href="../index.html" title="UNDP homepage link" style="font-weight: 600;">SDG Push
+                            <span><a href="../index.html" title="UNDP homepage link" style="font-weight: 700;">SDG Push
                                     </a></span>
                         </div>
                     </div>
@@ -1100,7 +1186,7 @@
             <img src="../assets/img/Shipping Image.png" alt="Shipping containers" class="hero-img" style="width:100vw;height:auto;display:block;margin:0;padding:0;border:none;">
             <div class="hero-overlay-content" style="position:absolute;top:0;left:0;width:100vw;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding-left:10vw;z-index:2;">
                 <h1 style="font-family:'SohneBreit', 'Proxima Nova', 'Arial', sans-serif;font-size:6.5rem;line-height:1.02;color:#fff;font-weight:700;margin-bottom:2rem;text-shadow:0 2px 36px rgba(0,0,0,0.32);letter-spacing:-2px;">ECONOMIC<br>MODELING</h1>
-                <div class="overline" style="font-family:'SohneBreit', 'Proxima Nova', 'Arial', sans-serif;font-size:2.1rem;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,0.22);font-weight:300;margin-top:0;letter-spacing:0;">Simulating the effects of major shocks and policies with UNDP's CGE Model</div>
+                <div class="overline" style="font-family:'Proxima Nova', sans-serif;font-size:2.1rem;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,0.22);font-weight:300;margin-top:0;letter-spacing:0;">Simulating the effects of major shocks and policies with UNDP's CGE Model</div>
             </div>
         </section>
 
@@ -1353,58 +1439,51 @@
     </section>
 
     <!-- Featured Work Section -->
-    <section style="background-color: white; padding: 100px 0; font-family: 'Proxima Nova', 'Arial', sans-serif;">
+    <section style="background-color: white; padding: 80px 0 60px; font-family: 'Proxima Nova', 'Arial', sans-serif;">
         <div class="grid-container">
-            <div class="grid-x">
-                <div class="cell small-12" style="margin-bottom: 60px;">
-                    <div class="grid-container" style="padding: 0; position: relative;">
-                        <h2 style="font-size: 2.5rem; font-weight: 700; color: #0a1c34; margin-bottom: 10px; padding-left: 40px; font-family: inherit;">Featured work</h2>
-                        <div class="featured-work-controls" aria-label="Featured work navigation">
-                            <button id="featured-prev-btn" class="featured-work-nav" type="button" aria-label="Previous featured report">‹</button>
-                            <button id="featured-next-btn" class="featured-work-nav" type="button" aria-label="Next featured report">›</button>
-                        </div>
-                    </div>
-                        <div id="featured-progress-bar" style="width: 100%; height: 12px; display: flex; margin-top: 12px; margin-bottom: 8px; align-items: center; position: relative; cursor: pointer; user-select: none;">
-                            <div id="progress-bar-bg" style="width: 100%; height: 1px; background: #111; border-radius: 0; position: absolute; top: 9px; left: 0;"></div>
-                            <div id="progress-bar-handle" style="height: 4px; background: #232E3D; border-radius: 0; position: absolute; top: 7px; left: 0; width: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); transition: background 0.2s;"></div>
-                        </div>
-                </div>
-            </div>
-        </div>
-        <div class="grid-container" style="max-width: 1200px; padding-top: 0; padding-bottom: 0; margin-top: 0; margin-bottom: 0;">
-            <div id="featured-scroll-area" style="display: flex; flex-direction: row; gap: 60px; overflow-x: auto; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; padding-bottom: 16px; scrollbar-width: none; -ms-overflow-style: none;">
-                <!-- Report 1 -->
-                <div style="flex: 0 0 90%; max-width: 90%; min-width: 600px; display: flex; align-items: stretch; justify-content: center;">
-                    <div style="position: relative; overflow: hidden; border-radius: 0; box-shadow: none; height: 400px; width: 340px; display: flex; align-items: stretch;">
-                        <img src="../assets/img/featured-report-1.jpg" alt="Featured Report" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                    <div style="padding-left: 40px; display: flex; flex-direction: column; justify-content: space-between; height: 400px; min-width: 0; flex: 1;">
-                        <div style="align-self: flex-start; padding-top: 0; padding-bottom: 0;">
-                            <h3 style="font-size: 1.8rem; font-weight: 500; color: #0a1c34; margin-bottom: 20px; line-height: 1.3; font-family: inherit;">Policy Paper: The Impacts of the Middle East Conflict on African Economies</h3>
-                            <p style="font-size: 1.1rem; color: #000; line-height: 1.7; margin-bottom: 0; font-family: inherit;">This joint policy paper maps how global geopolitical shocks impact African economies, from disrupted trade routes and volatile energy and fertilizer markets to exchange‑rate pressures and financial instability.</p>
-                        </div>
-                        <a href="https://www.undp.org/africa/publications/policy-brief-impacts-middle-east-conflict-africa" target="_blank" rel="noopener noreferrer" class="featured-work-btn" style="display: inline-block; padding: 8px 18px; background-color: #D12800; color: white; text-decoration: none; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease; border-radius: 0; align-self: flex-start; margin-top: auto; margin-bottom: 0;" title="UNDP publication">
-                            READ NOW <span style="color: #000; font-size: 1.5rem; vertical-align: middle; margin-left: 4px;">›</span>
-                        </a>
-                    </div>
-                </div>
+            <section class="fixed-carousel" style="overflow:hidden;">
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: #0a1c34; margin: 0 0 var(--undpds-spacing-50) 0; font-family: inherit;">Featured work</h2>
 
-                <!-- Report 2 -->
-                <div style="flex: 0 0 90%; max-width: 90%; min-width: 600px; display: flex; align-items: stretch; justify-content: center;">
-                    <div style="position: relative; overflow: hidden; border-radius: 0; box-shadow: none; height: 400px; width: 340px; display: flex; align-items: stretch;">
-                        <img src="../assets/img/featured-report-2.jpg" alt="Featured Report" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                    <div style="padding-left: 40px; display: flex; flex-direction: column; justify-content: space-between; height: 400px; min-width: 0; flex: 1;">
-                        <div style="align-self: flex-start; padding-top: 0; padding-bottom: 0;">
-                            <h3 style="font-size: 1.8rem; font-weight: 500; color: #0a1c34; margin-bottom: 20px; line-height: 1.3; font-family: inherit;">From Poverty to Prosperity and Well-Being: The UNDP World CGE Model for Policy Scenario Analysis</h3>
-                            <p style="font-size: 1.1rem; color: #000; line-height: 1.7; margin-bottom: 0; font-family: inherit;">This paper introduces the UNDP World CGE Model, a people-centered global framework covering 125 countries and designed to assess how policy choices and shocks affect economies, households, and vulnerable groups.</p>
+                <div class="swiper-scrollbar"></div>
+
+                <div class="swiper-wrapper">
+
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide slider-slide" aria-roledescription="slide" aria-label="slide 1">
+                        <div class="fixed-carousel__image-wrap">
+                            <img class="fixed-carousel__image" src="../assets/img/featured-report-1.jpg" alt="Policy Paper cover">
                         </div>
-                        <a href="../assets/documents/CGEPaper_June2026.pdf" target="_blank" rel="noopener noreferrer" class="featured-work-btn" style="display: inline-block; padding: 8px 18px; background-color: #D12800; color: white; text-decoration: none; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease; border-radius: 0; align-self: flex-start; margin-top: auto; margin-bottom: 0;" title="UNDP publication">
-                            READ NOW <span style="color: #000; font-size: 1.5rem; vertical-align: middle; margin-left: 4px;">›</span>
-                        </a>
+                        <article class="slide-content">
+                            <div class="slide-content-wrap">
+                                <h6>PUBLICATION</h6>
+                                <h4>Policy Paper: The Impacts of the Middle East Conflict on African Economies</h4>
+                                <p>This joint policy paper maps how global geopolitical shocks impact African economies, from disrupted trade routes and volatile energy and fertilizer markets to exchange‑rate pressures and financial instability.</p>
+                            </div>
+                            <div class="fixed-carousel__button-wrap">
+                                <a class="button button-primary button-arrow" style="border-radius:0;" href="https://www.undp.org/africa/publications/policy-brief-impacts-middle-east-conflict-africa" target="_blank" rel="noopener noreferrer">Read More</a>
+                            </div>
+                        </article>
                     </div>
-                </div>
-            </div>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide slider-slide" aria-roledescription="slide" aria-label="slide 2">
+                        <div class="fixed-carousel__image-wrap">
+                            <img class="fixed-carousel__image" src="../assets/img/featured-report-2.jpg" alt="CGE Model paper cover">
+                        </div>
+                        <article class="slide-content">
+                            <div class="slide-content-wrap">
+                                <h6>PUBLICATION</h6>
+                                <h4>From Poverty to Prosperity and Well-Being: The UNDP World CGE Model for Policy Scenario Analysis</h4>
+                                <p>This paper introduces the UNDP World CGE Model, a people-centered global framework covering 125 countries and designed to assess how policy choices and shocks affect economies, households, and vulnerable groups.</p>
+                            </div>
+                            <div class="fixed-carousel__button-wrap">
+                                <a class="button button-primary button-arrow" style="border-radius:0;" href="../assets/documents/CGEPaper_June2026.pdf" target="_blank" rel="noopener noreferrer">Read More</a>
+                            </div>
+                        </article>
+                    </div>
+
+                </div><!-- /.swiper-wrapper -->
+            </section>
         </div>
     </section>
 
@@ -1425,198 +1504,7 @@
         </div>
     </section>
 
-    <style>
-        .featured-work-btn:hover {
-            background-color: #A92000 !important;
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(209, 40, 0, 0.3);
-        }
-        .featured-work-controls {
-            position: absolute;
-            right: 40px;
-            top: 0;
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            z-index: 2;
-        }
-        .featured-work-nav {
-            width: 40px;
-            height: 40px;
-            border: 1px solid #d5d8dd;
-            background: #fff;
-            color: #0a1c34;
-            font-size: 1.3rem;
-            line-height: 1;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            padding: 0;
-            transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
-        }
-        .featured-work-nav:hover {
-            background: #f3f5f7;
-            border-color: #c2c7cf;
-            transform: translateY(-1px);
-        }
-        .featured-work-nav:disabled {
-            opacity: 0.45;
-            cursor: default;
-            transform: none;
-        }
-        #featured-scroll-area::-webkit-scrollbar {
-            display: none;
-        }
-        #featured-scroll-area {
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            scroll-snap-type: x mandatory;
-        }
-        #featured-progress-bar {
-            touch-action: pan-x;
-        }
-        #featured-scroll-area > div {
-            scroll-snap-align: start;
-        }
-    </style>
-        <script>
-        // Featured progress bar navigation logic
-        (function() {
-            var scrollArea = document.getElementById('featured-scroll-area');
-            var bar = document.getElementById('featured-progress-bar');
-            var handle = document.getElementById('progress-bar-handle');
-            var barBg = document.getElementById('progress-bar-bg');
-            var prevBtn = document.getElementById('featured-prev-btn');
-            var nextBtn = document.getElementById('featured-next-btn');
-            var autoRotateTimer = null;
-            if (!scrollArea || !bar || !handle || !barBg || !prevBtn || !nextBtn) return;
-
-            function getStep() {
-                var slide = scrollArea.querySelector(':scope > div');
-                if (!slide) return scrollArea.clientWidth;
-                var gap = parseFloat(getComputedStyle(scrollArea).gap || '0') || 0;
-                return slide.getBoundingClientRect().width + gap;
-            }
-
-            function updateHandle() {
-                var scrollW = scrollArea.scrollWidth - scrollArea.clientWidth;
-                var percent = scrollW > 0 ? scrollArea.scrollLeft / scrollW : 0;
-                var barW = bar.offsetWidth;
-                var handleW = Math.max(barW * (scrollArea.clientWidth / scrollArea.scrollWidth), 80);
-                var left = percent * (barW - handleW);
-                handle.style.width = handleW + 'px';
-                handle.style.left = left + 'px';
-                prevBtn.disabled = scrollArea.scrollLeft <= 0;
-                nextBtn.disabled = scrollArea.scrollLeft >= scrollW - 1;
-            }
-
-            function goToSlide(direction) {
-                var step = getStep();
-                var scrollW = scrollArea.scrollWidth - scrollArea.clientWidth;
-                var target = scrollArea.scrollLeft + (direction * step);
-                target = Math.max(0, Math.min(scrollW, target));
-                scrollArea.scrollTo({ left: target, behavior: 'smooth' });
-            }
-
-            function resetAutoRotateTimer() {
-                if (autoRotateTimer) {
-                    window.clearInterval(autoRotateTimer);
-                }
-                autoRotateTimer = window.setInterval(function() {
-                    var scrollW = scrollArea.scrollWidth - scrollArea.clientWidth;
-                    if (scrollW <= 0) return;
-                    var nearEnd = scrollArea.scrollLeft >= scrollW - 1;
-                    var nearStart = scrollArea.scrollLeft <= 0;
-                    if (nearEnd) {
-                        goToSlide(-1);
-                    } else if (nearStart) {
-                        goToSlide(1);
-                    } else if (scrollArea.scrollLeft < scrollW / 2) {
-                        goToSlide(1);
-                    } else {
-                        goToSlide(-1);
-                    }
-                }, 5000);
-            }
-
-            scrollArea.addEventListener('scroll', updateHandle);
-            window.addEventListener('resize', updateHandle);
-            setTimeout(updateHandle, 300);
-
-            prevBtn.addEventListener('click', function() {
-                goToSlide(-1);
-                resetAutoRotateTimer();
-            });
-            nextBtn.addEventListener('click', function() {
-                goToSlide(1);
-                resetAutoRotateTimer();
-            });
-
-            // Click or drag logic
-            var dragging = false, dragStartX = 0, dragStartScroll = 0;
-            handle.addEventListener('mousedown', function(e) {
-                dragging = true;
-                dragStartX = e.clientX;
-                dragStartScroll = scrollArea.scrollLeft;
-                document.body.style.userSelect = 'none';
-            });
-            document.addEventListener('mousemove', function(e) {
-                if (!dragging) return;
-                var barW = bar.offsetWidth;
-                var handleW = handle.offsetWidth;
-                var dx = e.clientX - dragStartX;
-                var scrollW = scrollArea.scrollWidth - scrollArea.clientWidth;
-                var maxMove = barW - handleW;
-                var percent = (handle.offsetLeft + dx) / maxMove;
-                percent = Math.max(0, Math.min(1, percent));
-                scrollArea.scrollLeft = percent * scrollW;
-            });
-            document.addEventListener('mouseup', function() {
-                dragging = false;
-                document.body.style.userSelect = '';
-            });
-
-            // Click on bar to jump
-            barBg.addEventListener('click', function(e) {
-                var rect = barBg.getBoundingClientRect();
-                var x = e.clientX - rect.left;
-                var barW = bar.offsetWidth;
-                var handleW = handle.offsetWidth;
-                var percent = (x - handleW/2) / (barW - handleW);
-                percent = Math.max(0, Math.min(1, percent));
-                var scrollW = scrollArea.scrollWidth - scrollArea.clientWidth;
-                scrollArea.scrollLeft = percent * scrollW;
-                resetAutoRotateTimer();
-            });
-
-            // Touch support
-            handle.addEventListener('touchstart', function(e) {
-                dragging = true;
-                dragStartX = e.touches[0].clientX;
-                dragStartScroll = scrollArea.scrollLeft;
-            });
-            document.addEventListener('touchmove', function(e) {
-                if (!dragging) return;
-                var barW = bar.offsetWidth;
-                var handleW = handle.offsetWidth;
-                var dx = e.touches[0].clientX - dragStartX;
-                var scrollW = scrollArea.scrollWidth - scrollArea.clientWidth;
-                var maxMove = barW - handleW;
-                var percent = (handle.offsetLeft + dx) / maxMove;
-                percent = Math.max(0, Math.min(1, percent));
-                scrollArea.scrollLeft = percent * scrollW;
-            }, {passive: false});
-            document.addEventListener('touchend', function() {
-                dragging = false;
-                resetAutoRotateTimer();
-            });
-
-            // Initial update
-            updateHandle();
-            resetAutoRotateTimer();
-        })();
-        </script>
+    
     
     <style>
         .detail-card:hover {
@@ -1805,7 +1693,26 @@
     <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
     <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 
-    
+    <!-- Mobile logo scroll snap -->
+    <script>
+    (function () {
+        var header = document.querySelector('.country-header');
+
+        function update() {
+            if (!header) return;
+            if (window.innerWidth <= 768) {
+                header.classList.toggle('scrolled', window.scrollY > 10);
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+
+        window.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update);
+        update();
+    })();
+    </script>
+
         <!-- ++++++++++++++++++++++ FOOTER  ++++++++++++++++++++++-->
 
         <footer class="footer">
@@ -2042,6 +1949,7 @@
     <script>
         $(function () {
             swiper('.stats-slider');
+            swiper('.fixed-carousel', '.fixed-carousel__button-wrap');
         });
     </script>
     <script>
